@@ -1,3 +1,15 @@
+# Specific files and folders:
+00_demo/
+01_extract/*
+02_load/*
+03_transform/*
+04_EDA/*
+05_model/*
+**/archive_files
+!*.ipynb
+!*.py
+**/*config.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

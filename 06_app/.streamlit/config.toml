@@ -1,0 +1,5 @@
+[theme]
+base="light"
+primaryColor="#0b7ca3"
+backgroundColor= "#FFFFFF"  # salmon-pink color: "#f7e1cd"
+secondaryBackgroundColor= "#F0F2F6" #salmon-pink secondary color: "#fef9f4"
