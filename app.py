@@ -170,8 +170,8 @@ class CarPricePredictionApp:
 if __name__ == "__main__":
     # Initialize the app with paths to your datasets
     app = CarPricePredictionApp(
-        performance_data_path='./app_files/performance_metrics.csv',
-        results_data_path='./app_files/final_results_df.csv',
-        pictures_data_path='./app_files/car_pictures_table_all.csv'
+        performance_data_path='./06_app/app_files/performance_metrics.csv',
+        results_data_path='./06_app/app_files/final_results_df.csv',
+        pictures_data_path='./06_app/app_files/car_pictures_table_all.csv'
     )
     app.run_app()
