@@ -10,7 +10,7 @@ from sklearn.linear_model import LinearRegression
 
 # CONFIG OPTIONS:
 #####################################################################################################
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 
 # FUNCTION DEFINITIONS:
@@ -25,28 +25,54 @@ class CarPricePredictionApp:
 
     def get_user_selections(self):
         """Get user selections from the sidebar."""
-        with st.sidebar:
-            default_brand = 'peugeot'
-            brands_list = self.performance_df['brand'].unique().tolist()
-            default_brand_index = brands_list.index(default_brand)
-            selected_brand = st.selectbox(label='Select Brand',
-                                          options=brands_list,
-                                          index=default_brand_index,
-                                          placeholder="Select a car brand")
+        with st.expander(label='user selection'):
+            left_col, right_col = st.columns(2)
 
-            brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
-            default_model = '3008' if selected_brand == default_brand else None
-            default_model_index = brand_models_list.index(default_model) if default_model else 0
-            selected_model = st.selectbox(label='Select model',
-                                          options=brand_models_list,
-                                          index=default_model_index,
-                                          placeholder='Select a model')
+            with left_col:
+                default_brand = 'peugeot'
+                brands_list = self.performance_df['brand'].unique().tolist()
+                default_brand_index = brands_list.index(default_brand)
+                selected_brand = st.selectbox(label='Select Brand',
+                                            options=brands_list,
+                                            index= None, # default_brand_index,
+                                            placeholder="Select a car brand")
 
-            selected_transmission = st.multiselect(label='Select Transmission(s)',
-                                                   options=['manual', 'automatic'],
-                                                   default=['manual', 'automatic'])
+                brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
+                default_model = '3008' if selected_brand == default_brand else None
+                default_model_index = brand_models_list.index(default_model) if default_model else 0
+                selected_model = st.selectbox(label='Select model',
+                                            options=brand_models_list,
+                                            index= None, #default_model_index,
+                                            placeholder='Select a model')
 
-            selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
+                selected_transmission = st.multiselect(label='Select Transmission(s)',
+                                                    options=['manual', 'automatic'],
+                                                    default=['manual', 'automatic'])
+
+                selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
+
+            with right_col:
+                # Display car picture
+                car_pictures_brand_model = self.car_pictures_df[
+                    (self.car_pictures_df['author'] != 'Unknown') &
+                    (self.car_pictures_df['brand'] == selected_brand) &
+                    (self.car_pictures_df['model'] == selected_model)
+                ].reset_index(drop=True)
+
+                if not car_pictures_brand_model.empty:
+                    selected_picture = car_pictures_brand_model.iloc[0]
+                    image_author = selected_picture['author']
+                    image_full_url = selected_picture['fullurl']
+                    image_picture_url = selected_picture['imageinfo.0.thumburl']
+                    image_attribution = f"""Image by: [{image_author}]({image_full_url}),
+                                            [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"""
+                                            # via Wikimedia Commons"""
+                    st.image(image_picture_url, use_column_width=True)
+                    
+                    st.info(image_attribution)
+                else:
+                    st.info('Car image not available')
+            
 
             selected_km = st.slider(label='Select mileage (km)',
                                     min_value=0,
@@ -60,22 +86,7 @@ class CarPricePredictionApp:
                                      value=(0, 12),
                                      step=1)
 
-            # Display car picture
-            car_pictures_brand_model = self.car_pictures_df[
-                (self.car_pictures_df['author'] != 'Unknown') &
-                (self.car_pictures_df['brand'] == selected_brand) &
-                (self.car_pictures_df['model'] == selected_model)
-            ].reset_index(drop=True)
-
-            if not car_pictures_brand_model.empty:
-                selected_picture = car_pictures_brand_model.iloc[0]
-                image_author = selected_picture['author']
-                image_full_url = selected_picture['fullurl']
-                image_picture_url = selected_picture['imageinfo.0.thumburl']
-                st.image(image_picture_url, use_column_width=True)
-                st.info(f"Image by: [{image_author}]({image_full_url}), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) via Wikimedia Commons")
-            else:
-                st.info('Car image not available')
+            
 
         return selected_brand, selected_model, selected_transmission, selected_km, selected_age
 
@@ -109,7 +120,7 @@ class CarPricePredictionApp:
                 fig.update_layout(legend=dict(x=1, y=1, traceorder='normal', orientation='v',
                                               xanchor='right', yanchor='top'))
 
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, config={'staticPlot':True})
 
             else:
                 st.warning("No data available for this brand-model combination.")
