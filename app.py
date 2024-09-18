@@ -10,7 +10,7 @@ from sklearn.linear_model import LinearRegression
 
 # CONFIG OPTIONS:
 #####################################################################################################
-# st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
 
 # FUNCTION DEFINITIONS:
@@ -25,21 +25,21 @@ class CarPricePredictionApp:
 
     def get_user_selections(self):
         """Get user selections from the sidebar."""
-        with st.expander(label='user selection'):
-            left_col, right_col = st.columns(2)
+        with st.expander(label='Car selection:', expanded=True):
+            left_col, right_col = st.columns(spec=[0.8, 0.2])
 
             with left_col:
-                default_brand = 'peugeot'
+                # default_brand = 'peugeot'
                 brands_list = self.performance_df['brand'].unique().tolist()
-                default_brand_index = brands_list.index(default_brand)
+                # default_brand_index = brands_list.index(default_brand)
                 selected_brand = st.selectbox(label='Select Brand',
                                             options=brands_list,
                                             index= None, # default_brand_index,
                                             placeholder="Select a car brand")
 
                 brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
-                default_model = '3008' if selected_brand == default_brand else None
-                default_model_index = brand_models_list.index(default_model) if default_model else 0
+                # default_model = '3008' if selected_brand == default_brand else None
+                # default_model_index = brand_models_list.index(default_model) if default_model else 0
                 selected_model = st.selectbox(label='Select model',
                                             options=brand_models_list,
                                             index= None, #default_model_index,
@@ -67,9 +67,9 @@ class CarPricePredictionApp:
                     image_attribution = f"""Image by: [{image_author}]({image_full_url}),
                                             [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"""
                                             # via Wikimedia Commons"""
-                    st.image(image_picture_url, use_column_width=True)
+                    st.image(image_picture_url, use_column_width='auto')
                     
-                    st.info(image_attribution)
+                    st.info(image_attribution, icon=":material/attribution:")
                 else:
                     st.info('Car image not available')
             
@@ -151,7 +151,7 @@ class CarPricePredictionApp:
                 fig_age.update_layout(legend=dict(x=1, y=1, traceorder='normal', orientation='v',
                                                   xanchor='right', yanchor='top'))
 
-                st.plotly_chart(fig_age, use_container_width=True)
+                st.plotly_chart(fig_age, use_container_width=True, config={'staticPlot':True})
 
             else:
                 st.warning("No data available for this brand-model combination.")
