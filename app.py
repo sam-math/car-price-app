@@ -6,6 +6,7 @@ import plotly.express as px
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
+from app.app_utils.filter_utils import filter_dataframe 
 
 
 # CONFIG OPTIONS:
@@ -25,57 +26,75 @@ class CarPricePredictionApp:
 
     def get_user_selections(self):
         """Get user selections from the sidebar."""
-        with st.sidebar:
-            default_brand = 'peugeot'
-            brands_list = self.performance_df['brand'].unique().tolist()
-            default_brand_index = brands_list.index(default_brand)
-            selected_brand = st.selectbox(label='Select Brand',
-                                          options=brands_list,
-                                          index=default_brand_index,
-                                          placeholder="Select a car brand")
+        with st.expander(label='Car selection:', expanded=True):
+            left_col, right_col = st.columns(spec=[0.5, 0.5])
 
-            brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
-            default_model = '3008' if selected_brand == default_brand else None
-            default_model_index = brand_models_list.index(default_model) if default_model else 0
-            selected_model = st.selectbox(label='Select model',
-                                          options=brand_models_list,
-                                          index=default_model_index,
-                                          placeholder='Select a model')
+            with left_col:
+                # default_brand = 'peugeot'
+                brands_list = self.performance_df['brand'].unique().tolist()
+                # default_brand_index = brands_list.index(default_brand)
+                selected_brand = st.selectbox(label='Select Brand',
+                                            options=brands_list,
+                                            index= None, # default_brand_index,
+                                            placeholder="Select a car brand")
+                
+                brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
+                # default_model = '3008' if selected_brand == default_brand else None
+                # default_model_index = brand_models_list.index(default_model) if default_model else 0
+                selected_model = st.selectbox(label='Select model',
+                                            options=brand_models_list,
+                                            index= None, #default_model_index,
+                                            placeholder='Select a model')
+                if selected_model:
+                    selected_transmission = st.multiselect(label='Select Transmission(s)',
+                                                    options=['manual', 'automatic'],
+                                                    default=['manual', 'automatic'])
 
-            selected_transmission = st.multiselect(label='Select Transmission(s)',
-                                                   options=['manual', 'automatic'],
-                                                   default=['manual', 'automatic'])
+                    selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
+                else:
+                    selected_transmission = None
 
-            selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
+            with right_col:
+                if selected_model:
+                    # Display car picture
+                    car_pictures_brand_model = self.car_pictures_df[
+                        (self.car_pictures_df['author'] != 'Unknown') &
+                        (self.car_pictures_df['brand'] == selected_brand) &
+                        (self.car_pictures_df['model'] == selected_model)
+                    ].reset_index(drop=True)
 
-            selected_km = st.slider(label='Select mileage (km)',
-                                    min_value=0,
-                                    max_value=500_000,
-                                    value=(0, 200_000),
-                                    step=25_000)
+                    if not car_pictures_brand_model.empty:
+                        selected_picture = car_pictures_brand_model.iloc[0]
+                        image_author = selected_picture['author']
+                        image_full_url = selected_picture['fullurl']
+                        image_picture_url = selected_picture['imageinfo.0.thumburl']
+                        image_attribution = f"""Image by: [{image_author}]({image_full_url}),
+                                                [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)"""
+                                                # via Wikimedia Commons"""
+                        st.image(image_picture_url, use_column_width='auto')
+                        
+                        st.info(image_attribution, icon=":material/attribution:")
+                    else:
+                        st.info('Car image not available')
+                
+            
+            if selected_model:
+                selected_km = st.slider(label='Select mileage (km)',
+                                        min_value=0,
+                                        max_value=500_000,
+                                        value=(0, 200_000),
+                                        step=25_000)
 
-            selected_age = st.slider(label='Select age of car (years)',
-                                     min_value=0,
-                                     max_value=25,
-                                     value=(0, 12),
-                                     step=1)
-
-            # Display car picture
-            car_pictures_brand_model = self.car_pictures_df[
-                (self.car_pictures_df['author'] != 'Unknown') &
-                (self.car_pictures_df['brand'] == selected_brand) &
-                (self.car_pictures_df['model'] == selected_model)
-            ].reset_index(drop=True)
-
-            if not car_pictures_brand_model.empty:
-                selected_picture = car_pictures_brand_model.iloc[0]
-                image_author = selected_picture['author']
-                image_full_url = selected_picture['fullurl']
-                image_picture_url = selected_picture['imageinfo.0.thumburl']
-                st.image(image_picture_url, use_column_width=True)
-                st.info(f"Image by: [{image_author}]({image_full_url}), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) via Wikimedia Commons")
+                selected_age = st.slider(label='Select age of car (years)',
+                                        min_value=0,
+                                        max_value=25,
+                                        value=(0, 12),
+                                        step=1)
             else:
-                st.info('Car image not available')
+                selected_km = None
+                selected_age = None
+
+            
 
         return selected_brand, selected_model, selected_transmission, selected_km, selected_age
 
@@ -109,7 +128,7 @@ class CarPricePredictionApp:
                 fig.update_layout(legend=dict(x=1, y=1, traceorder='normal', orientation='v',
                                               xanchor='right', yanchor='top'))
 
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, config={'staticPlot':True})
 
             else:
                 st.warning("No data available for this brand-model combination.")
@@ -140,7 +159,7 @@ class CarPricePredictionApp:
                 fig_age.update_layout(legend=dict(x=1, y=1, traceorder='normal', orientation='v',
                                                   xanchor='right', yanchor='top'))
 
-                st.plotly_chart(fig_age, use_container_width=True)
+                st.plotly_chart(fig_age, use_container_width=True, config={'staticPlot':True})
 
             else:
                 st.warning("No data available for this brand-model combination.")
@@ -162,17 +181,20 @@ class CarPricePredictionApp:
 
             self.plot_charts(selected_car, selected_brand, selected_model)
 
-            st.write("Prediction Results (with all columns):")
-            edited_df = st.data_editor(selected_car, use_container_width=True)
+            # st.write("Prediction Results (with all columns):")
+            with st.expander(label=f'Our predictions for {selected_brand} {selected_model} are based on this data:', expanded=False):
+                edited_df = st.dataframe(filter_dataframe(selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
+                                                       'cv','fuel', 'title']]),
+                                        hide_index=True)
 
 # MAIN APP:
 #####################################################################################################
 if __name__ == "__main__":
     # Initialize the app with paths to your datasets
     app = CarPricePredictionApp(
-        performance_data_path='06_app/app_files/performance_metrics.csv',
-        results_data_path='06_app/app_files/final_results_df.csv',
-        pictures_data_path='06_app/app_files/car_pictures_table_all.csv'
+        performance_data_path='app/app_files/performance_metrics.csv',
+        results_data_path='app/app_files/final_results_df.csv',
+        pictures_data_path='app/app_files/car_pictures_table_all.csv'
     )
     app.run_app()
 
