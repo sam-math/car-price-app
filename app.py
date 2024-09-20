@@ -43,7 +43,8 @@ class CarPricePredictionApp:
                                             options=self.common_brands if brands_choice == 'Common Car Brands' else brands_list,
                                             index= None, # default_brand_index,
                                             placeholder="Select a car brand")
-                selected_brand = selected_brand.lower()
+                if selected_brand:
+                    selected_brand = selected_brand.lower()
                 
                 
                 brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
