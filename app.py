@@ -23,6 +23,10 @@ class CarPricePredictionApp:
         self.performance_df = pd.read_csv(performance_data_path)
         self.results_df = pd.read_csv(results_data_path)
         self.car_pictures_df = pd.read_csv(pictures_data_path)
+        self.common_brands = ['ALFA ROMEO', 'AUDI', 'BMW', 'CITROEN', 'CUPRA', 'DACIA', 'DS', 'FIAT', 'FORD',
+                            'HONDA', 'HYUNDAI', 'JEEP', 'KIA', 'LAND-ROVER', 'LEXUS', 'MAZDA', 'MERCEDES-BENZ',
+                            'MG', 'MINI', 'MITSUBISHI', 'NISSAN', 'OPEL', 'PEUGEOT', 'RENAULT', 'ROVER', 'SEAT',
+                            'SKODA', 'SUZUKI', 'TESLA', 'TOYOTA', 'VOLKSWAGEN', 'VOLVO']
 
     def get_user_selections(self):
         """Get user selections from the sidebar."""
@@ -30,13 +34,17 @@ class CarPricePredictionApp:
             left_col, right_col = st.columns(spec=[0.5, 0.5])
 
             with left_col:
+                brands_choice = st.radio('Car Brands List:', ['Common Car Brands', 'All Car Brands'], horizontal=True)
+
                 # default_brand = 'peugeot'
-                brands_list = self.performance_df['brand'].unique().tolist()
+                brands_list = self.performance_df['brand'].str.upper().unique().tolist()
                 # default_brand_index = brands_list.index(default_brand)
-                selected_brand = st.selectbox(label='Select Brand',
-                                            options=brands_list,
+                selected_brand = st.selectbox(label= f"{brands_choice}:",
+                                            options=self.common_brands if brands_choice == 'Common Car Brands' else brands_list,
                                             index= None, # default_brand_index,
                                             placeholder="Select a car brand")
+                selected_brand = selected_brand.lower()
+                
                 
                 brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
                 # default_model = '3008' if selected_brand == default_brand else None
