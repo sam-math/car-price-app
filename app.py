@@ -31,7 +31,7 @@ class CarPricePredictionApp:
     def get_user_selections(self):
         """Get user selections from the sidebar."""
         with st.expander(label='Car selection:', expanded=True):
-            left_col, right_col = st.columns(spec=[0.5, 0.5])
+            left_col, middle_col, right_col = st.columns(spec=[0.35, 0.40, 0.25], gap='large')
 
             with left_col:
                 brands_choice = st.radio('Car Brands List:', ['Common Car Brands', 'All Car Brands'], horizontal=True)
@@ -54,14 +54,7 @@ class CarPricePredictionApp:
                                             options=brand_models_list,
                                             index= None, #default_model_index,
                                             placeholder='Select a model')
-                if selected_model:
-                    selected_transmission = st.multiselect(label='Select Transmission(s)',
-                                                    options=['manual', 'automatic'],
-                                                    default=['manual', 'automatic'])
-
-                    selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
-                else:
-                    selected_transmission = None
+                    
 
             with right_col:
                 if selected_model:
@@ -86,24 +79,30 @@ class CarPricePredictionApp:
                     else:
                         st.info('Car image not available')
                 
-            
-            if selected_model:
-                selected_km = st.slider(label='Select mileage (km)',
-                                        min_value=0,
-                                        max_value=500_000,
-                                        value=(0, 200_000),
-                                        step=25_000)
+            with middle_col:
+                if selected_model:
+                    selected_transmission = st.multiselect(label='Select Transmission(s)',
+                                                    options=['manual', 'automatic'],
+                                                    default=['manual', 'automatic'])
 
-                selected_age = st.slider(label='Select age of car (years)',
-                                        min_value=0,
-                                        max_value=25,
-                                        value=(0, 12),
-                                        step=1)
-            else:
-                selected_km = None
-                selected_age = None
+                    selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
 
-            
+                    selected_km = st.slider(label='Select mileage (km)',
+                                            min_value=0,
+                                            max_value=500_000,
+                                            value=(0, 200_000),
+                                            step=25_000)
+
+                    selected_age = st.slider(label='Select age of car (years)',
+                                            min_value=0,
+                                            max_value=25,
+                                            value=(0, 12),
+                                            step=1)
+                else:
+                    selected_transmission = None
+                    selected_km = None
+                    selected_age = None
+
 
         return selected_brand, selected_model, selected_transmission, selected_km, selected_age
 
