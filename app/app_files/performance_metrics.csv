@@ -1,94 +1,94 @@
 brand,model,rmse,mape
-abarth,124 spider,8346.96164780934,0.6901115267814795
-abarth,500,2815.76,10.97
-abarth,500c,3137.03,12.65
-abarth,695,3118.136943753433,0.132946409320466
+abarth,124 spider,8507.997708039184,0.7504356408747272
+abarth,500,2550.5,9.6
+abarth,500c,2872.2,11.49
+abarth,695,3227.744413673425,0.11428
 abarth,punto evo,0.0,0.0
 aiways,u5,4590.21,14.81
-alfa romeo,146,1197.7688372553362,0.3710318767694089
-alfa romeo,147,1492.68,56.95
-alfa romeo,156,1797.36,93.83
-alfa romeo,159,2771.45,47.93
-alfa romeo,166,1789.0290662814843,0.4657611693325979
-alfa romeo,33,1247.2191289246473,0.3277216610549944
+alfa romeo,146,1266.8909779456162,0.31752732366029074
+alfa romeo,147,1559.88,61.13
+alfa romeo,156,1589.12,82.17
+alfa romeo,159,2738.66,47.85
+alfa romeo,166,1886.9618438113687,0.3786753786753787
+alfa romeo,33,1290.9944487358057,0.3272727272727273
 alfa romeo,4c,0.0,0.0
-alfa romeo,75,14407.02953422391,1.414795637829912
-alfa romeo,brera,1911.48,19.1
-alfa romeo,giulia,4904.04,9.55
-alfa romeo,giulietta,1773.56,14.28
+alfa romeo,75,15512.092057488571,0.8985428885630498
+alfa romeo,brera,1911.87,19.11
+alfa romeo,giulia,2545.36,5.84
+alfa romeo,giulietta,1735.51,13.4
 alfa romeo,gt,1383.23,51.33
 alfa romeo,gtv,4862.44,28.13
-alfa romeo,mito,1723.42,19.44
+alfa romeo,mito,1425.38,17.16
 alfa romeo,spider,4513.9,56.11
 alfa romeo,sprint,477.5,0.0456905964397724
-alfa romeo,stelvio,5499.83,9.57
-alfa romeo,tonale,2938.95,4.37
+alfa romeo,stelvio,4684.57,7.92
+alfa romeo,tonale,2065.85,2.94
 alpine,a110,7993.25,9.81
-aro,10,1338.6093530227554,0.7425712719298245
+aro,10,1340.7087677791922,0.7641995614035088
 aro,expander,0.0,0.0
 asia,rocsta,5199.06,86.05
-asia motors,rocsta,11293.877397362992,9.840973544973545
+asia motors,rocsta,13420.66193101766,1.6902857142857144
 aston martin,db7,2545.0,0.053795848256510986
 aston martin,db9,5365.11,10.38
-aston martin,v8 vantage,6531.559442430268,0.11925120931158656
+aston martin,v8 vantage,6628.161509800437,0.11652791722593536
 aston martin,vanquish,0.0,0.0
 aston martin,vantage,0.0,0.0
 aston martin,vantage v8,7810.07,6.98
 audi,100,684.4,39.83
 audi,200,0.0,0.0
 audi,80,2676.33,179.98
-audi,90,2607.081701826776,0.6717371323529411
-audi,a1,2046.61,8.25
-audi,a2,1139.6,49.45
-audi,a3,4629.52,24.64
-audi,a4,4081.24,28.67
+audi,90,2680.951323690902,0.7431985294117647
+audi,a1,1740.55,6.99
+audi,a2,1139.57,49.45
+audi,a3,3386.85,22.69
+audi,a4,2889.63,27.07
 audi,a4 allroad,4350.0,2.9476973684210526
-audi,a4 allroad quattro,3324.28,15.89
-audi,a5,5723.59,27.0
-audi,a6,6489.56,38.61
-audi,a6 allroad quattro,5775.75,164.85
-audi,a7,10991.7,172.36
-audi,a8,4004.43,25.73
-audi,allroad quattro,3218.57,39.4
+audi,a4 allroad quattro,2908.51,12.44
+audi,a5,4848.73,24.06
+audi,a6,5127.2,34.53
+audi,a6 allroad quattro,5574.87,162.64
+audi,a7,10520.03,171.65
+audi,a8,3996.44,24.54
+audi,allroad quattro,3218.64,39.39
 audi,cabriolet,7402.38,63.72
 audi,coupe,4524.54,98.46
 audi,e-tron,8499.58,14.43
-audi,e-tron gt,3910.38,4.08
+audi,e-tron gt,3910.56,4.08
 audi,e-tron sportback,16888.46,73.95
-audi,q2,2367.46,6.38
-audi,q3,3815.02,9.13
-audi,q3 sportback,7450.07,10.87
+audi,q2,1900.84,5.43
+audi,q3,3483.4,7.61
+audi,q3 sportback,5266.51,7.46
 audi,q4 e-tron,4717.07,8.54
-audi,q4 sportback e-tron,9227.59,21.71
-audi,q5,4802.61,21.08
-audi,q5 sportback,11602.57,20.79
+audi,q4 sportback e-tron,9294.86,21.84
+audi,q5,4039.66,20.63
+audi,q5 sportback,10420.45,19.25
 audi,q6 e-tron,2295.0,0.027606800526478566
-audi,q7,6692.49,14.02
-audi,q8,8936.55,8.81
-audi,q8 e-tron,2950.220330754976,0.034539395391569305
+audi,q7,6400.04,13.58
+audi,q8,6378.31,5.87
+audi,q8 e-tron,3200.2187425237043,0.02867838827838828
 audi,q8 e-tron sportback,3500.0,0.06696428571428571
 audi,q8 sportback e-tron,8909.1,10.12
-audi,r8,24968.43,21.31
+audi,r8,24968.3,21.31
 audi,rs2,0.0,0.0
 audi,rs3,20987.29,766.83
-audi,rs4,19104.39,27.88
-audi,rs5,7748.991869914435,0.3821445190047022
-audi,rs6,14094.5,34.68
-audi,rs7,3439.82,5.65
-audi,s1,5273.82,26.69
+audi,rs4,19104.63,27.88
+audi,rs5,8355.387483534201,0.38112224072622786
+audi,rs6,14094.59,34.68
+audi,rs7,3439.85,5.65
+audi,s1,5273.83,26.69
 audi,s2,0.0,0.0
 audi,s3,5336.84,34.2
-audi,s4,15217.59,69.55
-audi,s5,6008.62,16.97
-audi,s6,15598.1,51.64
-audi,s8,18148.94,111.58
-audi,sq5,3261.94,9.36
+audi,s4,15217.66,69.55
+audi,s5,6006.88,16.66
+audi,s6,15598.19,51.64
+audi,s8,18149.56,111.59
+audi,sq5,4108.0,12.99
 audi,sq7,9916.98,16.48
-audi,tt,5368.79,26.07
-audi,tt rs,3062.6785662227107,0.10147776796052659
-audi,tts,6893.73,23.05
+audi,tt,5475.93,26.13
+audi,tt rs,3502.8559776273987,0.07469592476489029
+audi,tts,6893.84,23.05
 audi,v8,0.0,0.0
-austin,mini,1649.915822768611,0.4407407407407407
+austin,mini,2020.7259421636902,0.4666666666666666
 austin,mini moke,0.0,0.0
 auverland,diesel,0.0,0.0
 bentley,bentayga,0.0,0.0
@@ -109,11 +109,11 @@ bmw,ix,12732.27,10.65
 bmw,ix1,2482.2,3.68
 bmw,ix2,4494.58,7.7
 bmw,ix3,10171.73,39.34
-bmw,serie 1,3329.74,20.18
+bmw,serie 1,3309.08,20.12
 bmw,serie 2,10758.4,18.87
 bmw,serie 2 active tourer,2577.26,12.13
 bmw,serie 2 gran tourer,2282.08,9.6
-bmw,serie 3,4813.06,39.98
+bmw,serie 3,4804.27,39.95
 bmw,serie 4,13773.43,21.11
 bmw,serie 5,5136.61,34.21
 bmw,serie 6,6453.83,27.32
@@ -129,23 +129,23 @@ bmw,x7,9571.41,9.14
 bmw,xm,8500.0,0.2910326086956522
 bmw,z3,4162.63,24.98
 bmw,z4,8280.26,25.1
-byd,seal,216.50635094610965,0.004237423391215526
-cadillac,bls,3826.36,235.7
-cadillac,cts,2129.6843793284384,0.21235673013166623
+byd,seal,250.0,0.002840909090909091
+cadillac,bls,3826.42,235.7
+cadillac,cts,2221.8610817660647,0.17451690821256038
 cadillac,el dorado,11250.0,1.823489010989011
 cadillac,escalade,3304.84,13.64
 cadillac,seville,2061.63,34.75
 cadillac,srx,2992.04,45.95
-cadillac,sts,564.5253660278596,0.08439413102223325
+cadillac,sts,665.9829827655759,0.0709585121602289
 cadillac,xlr,0.0,0.0
-chevrolet,aveo,1175.97,20.85
+chevrolet,aveo,1191.35,21.27
 chevrolet,camaro,29856.78,243.18
 chevrolet,captiva,1852.82,32.48
 chevrolet,corvette,10649.41,30.8
 chevrolet,corvette stingray,0.0,0.0
-chevrolet,cruze,1298.11,21.03
+chevrolet,cruze,1294.65,21.03
 chevrolet,epica,1516.35,49.14
-chevrolet,evanda,754.2472332656507,0.5925925925925926
+chevrolet,evanda,923.7604307034012,0.6666666666666666
 chevrolet,hhr,8002.5,0.9915867653367653
 chevrolet,kalos,1128.69,33.98
 chevrolet,lacetti,1420.89,69.06
@@ -155,15 +155,15 @@ chevrolet,nubira,1500.31,43.22
 chevrolet,orlando,2006.92,20.98
 chevrolet,spark,1222.2,23.45
 chevrolet,tacuma,348.99,15.32
-chevrolet,tahoe,43.447525821385966,0.002905487405521999
-chevrolet,trailblazer,2099.904812657522,0.40561251944930676
+chevrolet,tahoe,50.002499937503124,0.0019424582704681938
+chevrolet,trailblazer,2355.589239801088,0.2499375
 chevrolet,trax,1339.85,11.15
 chevrolet,volt,5660.35,29.24
 chrysler,300c,2964.07,23.18
 chrysler,300m,2509.14,89.55
 chrysler,crossfire,4497.73,54.42
 chrysler,grand voyager,3256.99,49.87
-chrysler,le baron,86.60254037844386,0.01830357142857143
+chrysler,le baron,100.0,0.011904761904761904
 chrysler,neon,200.0,0.14583333333333331
 chrysler,pt cruiser,1776.11,41.2
 chrysler,saratoga,0.0,0.0
@@ -175,72 +175,72 @@ chrysler,voyager,2457.25,55.64
 citroen,2cv,3403.05,163.99
 citroen,ami,538.12,6.31
 citroen,ax,935.14,107.1
-citroen,berlingo,2922.05,26.52
+citroen,berlingo,2891.39,26.2
 citroen,bx,1864.06,71.87
 citroen,c-crosser,1587.41,22.48
-citroen,c-elysee,1439.91,13.12
+citroen,c-elysee,1408.73,13.14
 citroen,c-zero,2287.12,30.49
-citroen,c1,1416.19,14.81
+citroen,c1,1472.85,14.95
 citroen,c15,1250.8,65.95
 citroen,c2,1250.8,49.86
 citroen,c25,5918.37,199.98
-citroen,c3,1184.02,13.78
-citroen,c3 aircross,1493.74,7.04
+citroen,c3,1172.19,13.64
+citroen,c3 aircross,1458.45,6.9
 citroen,c3 origin,2004.1,8.68
-citroen,c3 picasso,1469.54,20.35
+citroen,c3 picasso,1338.88,19.04
 citroen,c3 pluriel,2697.15,75.69
-citroen,c4,1360.55,16.22
-citroen,c4 aircross,1775.21,12.01
-citroen,c4 cactus,1445.32,9.08
-citroen,c4 picasso,1725.25,23.74
-citroen,c4 sedan,1226.33,25.68
-citroen,c4 spacetourer,2154.28,11.36
+citroen,c4,1322.58,15.35
+citroen,c4 aircross,1775.45,12.01
+citroen,c4 cactus,1481.77,9.38
+citroen,c4 picasso,1725.15,24.84
+citroen,c4 sedan,1226.55,25.68
+citroen,c4 spacetourer,2481.08,12.52
 citroen,c4 x,3193.95,13.24
-citroen,c5,1325.26,32.01
-citroen,c5 aircross,2202.94,6.91
+citroen,c5,1269.56,31.01
+citroen,c5 aircross,2041.99,6.34
 citroen,c5 aircross hybrid,3204.0,8.26
-citroen,c5 x,4564.23,9.58
-citroen,c6,2060.34,20.51
+citroen,c5 x,4143.76,8.83
+citroen,c6,2060.32,20.51
 citroen,c8,1261.12,22.38
-citroen,cx,2409.7026095903757,0.4190483166092922
-citroen,ds3,2982.19,25.32
-citroen,ds4,1121.74,9.37
-citroen,ds5,2339.19,14.28
+citroen,cx,2838.426794311713,0.2175175175175175
+citroen,ds3,2876.0,24.11
+citroen,ds4,1035.06,7.47
+citroen,ds5,2225.38,13.57
 citroen,e-mehari,500.0,0.03229166666666666
 citroen,evasion,590.73,22.34
-citroen,grand c4 picasso,2920.06,29.12
-citroen,grand c4 spacetourer,1873.01,8.95
+citroen,grand c4 picasso,2942.12,29.31
+citroen,grand c4 spacetourer,1871.41,9.16
 citroen,jumper,11735.09,45.85
 citroen,jumpy,4722.51,54.82
-citroen,nemo,4045.03,67.66
+citroen,nemo,4045.36,67.67
 citroen,saxo,1675.61,53.12
-citroen,spacetourer,9699.26,19.94
-citroen,visa,471.4045207910317,0.18518518518518523
+citroen,spacetourer,9278.84,19.13
+citroen,visa,577.3502691896257,0.1111111111111111
 citroen,xantia,985.97,48.72
 citroen,xm,2272.56,64.06
-citroen,xsara,666.49,45.53
+citroen,xsara,644.09,43.63
 citroen,xsara picasso,914.21,31.33
 citroen,zx,307.24,23.57
 citroen,ë-berlingo,2759.18,9.24
 citroen,ë-c3,0.0,0.0
 citroen,ë-c3 aircross,0.0,0.0
-citroen,ë-c4,1976.27,5.24
+citroen,ë-c4,2043.18,5.4
 citroen,ë-jumpy,1080.49,27.5
-citroen,ë-spacetourer,6080.78,14.88
+citroen,ë-spacetourer,6080.79,14.88
 citroen,ëc4 x,2022.48,4.8
 corvette,corvette,21792.05,41.37
-cupra,ateca,4017.89,8.93
-cupra,born,4258.35,9.05
-cupra,formentor,3624.7,7.88
-cupra,leon,5164.24,13.17
-dacia,dokker,3052.58,38.86
-dacia,duster,1555.97,9.11
-dacia,jogger,2210.93,6.68
-dacia,lodgy,1285.84,10.37
-dacia,logan,1422.15,20.7
-dacia,sandero,1703.2,16.18
-dacia,spring,2516.6,13.81
-daewoo,aranos,169.96731711975949,0.15895061728395057
+cupra,ateca,4017.88,8.93
+cupra,born,4010.47,8.54
+cupra,formentor,2579.51,5.67
+cupra,leon,4771.37,11.76
+dacia,dokker,2667.86,34.9
+dacia,duster,1594.26,9.37
+dacia,jogger,2217.88,6.29
+dacia,lodgy,1362.19,10.4
+dacia,logan,1495.86,20.46
+dacia,sandero,1439.6,13.57
+dacia,spring,2001.94,10.32
+daewoo,aranos,182.57418583505537,0.125
 daewoo,compact,800.0,0.6044444444444445
 daewoo,kalos,726.5,49.16
 daewoo,lacetti,871.36,45.99
@@ -248,24 +248,24 @@ daewoo,lanos,441.28,50.57
 daewoo,leganza,0.0,0.0
 daewoo,matiz,513.43,39.15
 daewoo,nubira,688.16,29.57
-daewoo,tacuma,541.4332830552625,0.3110743728683578
+daewoo,tacuma,555.6752648804876,0.2997019358842405
 daihatsu,applause,0.0,0.0
 daihatsu,feroza,2004.82,41.99
-daihatsu,rocky,2577.250904010361,0.8711111111111111
+daihatsu,rocky,2587.791851495531,0.8974358974358975
 daihatsu,sirion,0.0,0.0
 daihatsu,terios,2398.51,149.44
-daimler,serie xj,12280.155626954498,0.6326879268145478
+daimler,serie xj,12345.309500643014,0.582263740158477
 daimler,series iii,0.0,0.0
 daimler,xj,1000.0,0.17142857142857143
 dfsk,500,2880.57,11.89
 dfsk,580,4497.37,11.52
 dfsk,fengon 5,4308.72,15.55
 dfsk,seres 3,750.0,0.030343164758560477
-dfsk,serie k,3468.8831055542937,0.25220087069874003
+dfsk,serie k,3729.6179428997816,0.2766707852070456
 dodge,avenger,371.56,9.28
-dodge,caliber,1623.86,84.51
+dodge,caliber,1620.45,84.3
 dodge,challenger,16833.3,316.22
-dodge,durango,5827.453882271399,0.3537860312036448
+dodge,durango,5906.405421235491,0.3645025031786395
 dodge,journey,1648.39,14.96
 dodge,nitro,2010.17,17.69
 dodge,viper,3050.0,0.0652380410022779
@@ -273,121 +273,121 @@ dr automobiles,dr 3,0.0,0.0
 dr automobiles,dr 3.0,0.0,0.0
 dr automobiles,dr 4.0,673.54,3.14
 dr automobiles,dr 5.0,6211.96,294.19
-dr automobiles,dr 6,8491.37908410642,9.859922559964193
+dr automobiles,dr 6,9805.0,12.901315789473685
 dr automobiles,dr 6.0,4200.0,0.14954407294832828
 dr automobiles,dr4,652.39,3.1
-ds,ds 3,2966.95,14.76
-ds,ds 3 crossback,1577.71,5.14
-ds,ds 3 crossback e-tense,8175.62,16.4
-ds,ds 4,1995.86,5.62
-ds,ds 4 crossback,1742.13,9.66
-ds,ds 5,1586.23,7.63
+ds,ds 3,3064.57,13.63
+ds,ds 3 crossback,1592.81,5.29
+ds,ds 3 crossback e-tense,8175.43,16.4
+ds,ds 4,1980.28,5.94
+ds,ds 4 crossback,1743.1,9.66
+ds,ds 5,1487.13,7.13
 ds,ds 7,7343.98,10.54
-ds,ds 7 crossback,2276.09,6.59
+ds,ds 7 crossback,2249.33,6.57
 ds,ds 7 crossback e-tense,3141.24,6.43
 ds,ds 9,10164.25,16.94
 evo,cross 4,940.67,2.43
 evo,evo 3,1499.34,6.19
-evo,evo 4,394.04155872191956,0.016699393356965565
+evo,evo 4,455.0,0.011380690345172586
 evo,evo 5,4170.93,15.71
-evo,evo 7,1658.3123951777,0.0469453991365602
+evo,evo 7,1732.0508075688772,0.047669865172618224
 ferrari,348,5080.3,6.04
-ferrari,360,21096.780560075986,0.21027876059095113
+ferrari,360,21620.523814190998,0.19839846272192102
 ferrari,599,0.0,0.0
 ferrari,612,0.0,0.0
-ferrari,california,9986.414104505515,0.08341876505002381
+ferrari,california,10196.669390868112,0.07864878440827809
 ferrari,f430,11500.0,0.10925512934879572
 ferrari,mondial,0.0,0.0
 fiat,124 spider,2560.35,11.33
-fiat,500,1185.35,8.58
-fiat,500c,1998.2,10.64
-fiat,500l,1247.42,9.39
-fiat,500x,1915.63,7.55
-fiat,600,7924.43,68.19
+fiat,500,1166.45,8.42
+fiat,500c,1937.0,10.7
+fiat,500l,1230.2,9.15
+fiat,500x,1951.03,6.76
+fiat,600,7924.53,68.19
 fiat,argenta,0.0,0.0
 fiat,barchetta,1447.94,21.38
-fiat,brava,248.746859276655,0.12538377192982456
-fiat,bravo,1236.99,54.19
+fiat,brava,250.0,0.11513157894736842
+fiat,bravo,1193.98,53.68
 fiat,cinquecento,1527.17,37.42
 fiat,coupe,1799.4,23.15
-fiat,croma,1251.68,70.0
-fiat,doblò,1996.08,26.21
+fiat,croma,1251.73,70.01
+fiat,doblò,1995.4,25.62
 fiat,doblò cargo,1000.5,0.20846877344336084
-fiat,doblò panorama,2994.58,30.38
+fiat,doblò panorama,2997.06,30.4
 fiat,ducato,10949.55,67.22
 fiat,e-doblò,3198.79,10.09
 fiat,e-ulysse,2801.76,35.29
-fiat,fiorino,1529.38,22.34
-fiat,freemont,2202.42,19.66
-fiat,fullback,960.83,3.91
-fiat,grande punto,1341.8,37.17
+fiat,fiorino,1515.54,21.66
+fiat,freemont,2415.31,22.04
+fiat,fullback,960.96,3.91
+fiat,grande punto,1041.46,26.41
 fiat,idea,647.9,31.12
-fiat,linea,937.72,24.85
+fiat,linea,938.13,24.86
 fiat,marea,1110.2,23.23
 fiat,multipla,1358.02,80.49
 fiat,palio weekend,0.0,0.0
-fiat,panda,1396.55,17.75
+fiat,panda,1384.82,17.82
 fiat,panda classic,1350.0,0.6467770034843205
-fiat,punto,1086.31,30.33
+fiat,punto,1042.66,29.93
 fiat,punto classic,595.0,0.3483240654927402
-fiat,punto evo,1038.79,20.55
-fiat,qubo,2195.9,16.98
-fiat,sedici,2334.13,44.52
+fiat,punto evo,997.41,19.86
+fiat,qubo,1608.65,12.77
+fiat,sedici,2334.14,44.52
 fiat,seicento,160.06,9.25
-fiat,stilo,751.27,25.74
-fiat,strada,1408.6229978244712,0.27761744834113256
+fiat,stilo,886.74,29.69
+fiat,strada,1601.7568479641347,0.24806334016860332
 fiat,talento,12316.91,70.21
-fiat,tipo,1512.98,7.66
+fiat,tipo,1526.61,7.94
 fiat,ulysse,1749.01,48.61
 fiat,uno,13733.27,1153.66
-ford,b-max,1141.63,10.82
-ford,bronco,50353.43,125.96
-ford,c-max,1811.86,24.38
+ford,b-max,1123.42,10.56
+ford,bronco,50353.85,125.96
+ford,c-max,1707.07,23.71
 ford,connect,0.0,0.0
 ford,cougar,1315.47,34.03
 ford,courier,3053.14,43.34
-ford,ecosport,1563.12,7.27
-ford,edge,5986.65,17.66
+ford,ecosport,1531.93,6.94
+ford,edge,5987.13,17.66
 ford,escort,3406.18,83.63
 ford,explorer,35841.49,760.72
-ford,fiesta,2084.94,23.47
-ford,focus,3219.27,24.73
+ford,fiesta,1796.91,21.94
+ford,focus,2612.53,23.79
 ford,focus c-max,1151.46,30.68
 ford,fusion,1265.56,43.83
-ford,galaxy,2284.63,28.97
+ford,galaxy,1973.25,26.02
 ford,granada,0.0,0.0
-ford,grand c-max,1505.06,10.89
-ford,grand tourneo connect,3313.7,50.26
+ford,grand c-max,1523.38,11.78
+ford,grand tourneo connect,3283.37,46.51
 ford,grand tourneo custom,4250.0,0.375
 ford,ka,1272.3,43.91
-ford,ka+,1197.24,8.41
-ford,kuga,2182.43,7.63
+ford,ka+,1116.16,8.31
+ford,kuga,2104.89,7.4
 ford,maverick,2698.69,34.85
-ford,mondeo,1513.08,31.11
-ford,mustang,8993.33,27.72
-ford,mustang mach-e,10497.53,15.38
+ford,mondeo,1451.09,30.92
+ford,mustang,8261.04,25.86
+ford,mustang mach-e,7959.17,12.86
 ford,orion,537.04,22.87
-ford,pickup,7248.922333698989,0.26073606271777006
+ford,pickup,8104.782538723664,0.1754355400696864
 ford,probe,2124.98,24.04
-ford,puma,1732.16,8.51
-ford,ranger,9441.94,38.29
-ford,s-max,2811.17,29.3
-ford,scorpio,2912.47317584214,1.101417594064653
+ford,puma,1634.0,8.0
+ford,ranger,8780.12,34.76
+ford,s-max,2977.25,29.92
+ford,scorpio,3079.3668180325644,0.8027512806924572
 ford,sierra,9517.44,86.21
-ford,streetka,1893.1161847305857,0.4720160791589363
-ford,tourneo connect,2770.49,56.04
-ford,tourneo courier,3163.36,18.47
-ford,tourneo custom,8459.58,38.92
-ford,transit,5961.56,49.76
-ford,transit connect,4991.78,85.73
+ford,streetka,1962.354028541571,0.48639455782312924
+ford,tourneo connect,2639.47,54.46
+ford,tourneo courier,3158.8,18.89
+ford,tourneo custom,8460.47,38.0
+ford,transit,5942.84,51.88
+ford,transit connect,4992.02,85.73
 ford,transit custom,14024.14,62.21
 galloper,exceed,2526.71,82.07
 galloper,santamo,0.0,0.0
 galloper,super exceed,2766.99,27.16
 honda,accord,1915.92,48.26
 honda,civic,4651.0,56.36
-honda,cr-v,1734.26,14.17
-honda,cr-z,1901.9118670432656,0.12751773648648648
+honda,cr-v,1682.32,12.99
+honda,cr-z,1979.1475437672655,0.12167417417417417
 honda,crx,2368.25,32.08
 honda,e:ny1,763.68,1.17
 honda,fr-v,1523.9,17.3
@@ -404,148 +404,148 @@ hummer,h3,4061.33,20.95
 hyundai,accent,1159.54,73.83
 hyundai,atos,540.38,41.26
 hyundai,atos prime,846.81,38.22
-hyundai,bayon,1273.65,4.49
-hyundai,coupe,1392.05,66.91
-hyundai,elantra,2897.42,38.33
+hyundai,bayon,1291.44,4.51
+hyundai,coupe,1391.66,66.91
+hyundai,elantra,2755.19,39.33
 hyundai,genesis,2500.0,0.14162077104642012
-hyundai,getz,687.29,19.76
+hyundai,getz,737.56,20.19
 hyundai,grand santa fe,8846.33,57.73
 hyundai,grandeur,0.0,0.0
 hyundai,h-1,4874.29,72.35
-hyundai,h-1 travel,13779.71,149.9
+hyundai,h-1 travel,13780.13,149.91
 hyundai,i10,1529.28,10.99
-hyundai,i20,3151.19,11.59
-hyundai,i20 active,3218.19,27.61
-hyundai,i30,5832.55,17.89
-hyundai,i40,1236.54,7.86
+hyundai,i20,3156.58,11.32
+hyundai,i20 active,3226.03,27.67
+hyundai,i30,3112.21,11.76
+hyundai,i40,1266.3,8.64
 hyundai,i800,0.0,0.0
 hyundai,ioniq,1669.46,6.85
 hyundai,ioniq 5,3924.58,6.06
 hyundai,ioniq 6,6350.33,14.32
-hyundai,ix20,1097.04,8.7
-hyundai,ix35,1526.78,10.98
-hyundai,ix55,4082.349568569551,0.3850879230064492
-hyundai,kona,2880.6,7.85
-hyundai,lantra,573.4883511361752,0.5111111111111112
-hyundai,matrix,746.24,44.0
-hyundai,santa fe,3394.3,37.26
-hyundai,scoupe,2263.294059551255,0.7645502645502644
+hyundai,ix20,1087.7,8.64
+hyundai,ix35,1543.36,11.58
+hyundai,ix55,4082.8993374806587,0.3854022126382899
+hyundai,kona,2725.01,7.87
+hyundai,lantra,577.3502691896257,0.4666666666666666
+hyundai,matrix,746.28,44.0
+hyundai,santa fe,3398.37,37.5
+hyundai,scoupe,2265.5021518418384,0.7465608465608466
 hyundai,sonata,2176.1,34.34
 hyundai,sonata fl,0.0,0.0
 hyundai,staria,4239.51,7.91
 hyundai,terracan,3418.96,84.71
 hyundai,trajet,1537.97,103.47
-hyundai,tucson,2241.73,8.37
-hyundai,veloster,3179.955777994405,0.37600734346142173
-hyundai,xg,767.605855892202,0.19023905569172112
-ineos,grenadier,5033.216541139473,0.057417422043871805
+hyundai,tucson,2074.65,7.83
+hyundai,veloster,3197.291822777521,0.38902034806209024
+hyundai,xg,819.6798155377501,0.16800619553376905
+ineos,grenadier,5663.945179819451,0.04747744478117389
 infiniti,ex,3291.17,38.29
 infiniti,fx,4803.17,18.66
 infiniti,g,1306.19,5.0
 infiniti,m,2692.14,17.79
-infiniti,q30,2046.28,9.11
+infiniti,q30,2106.63,9.28
 infiniti,q50,2258.7,13.28
 infiniti,q60,5417.57,11.01
 infiniti,q70,1554.81,7.1
 infiniti,qx30,814.81,2.59
 infiniti,qx50,2000.0,0.11929824561403508
-infiniti,qx70,2708.97120693447,0.13366386448325485
-isuzu,d max,12078.355296424537,1.4604750088621055
+infiniti,qx70,2737.6175773836635,0.13625896040219737
+isuzu,d max,13622.652703004163,0.6589861751152074
 isuzu,d-max,12041.47,74.02
 isuzu,pick up,13500.0,4.7368421052631575
 isuzu,rodeo,0.0,0.0
 isuzu,trooper,1619.03,54.44
 iveco,daily,7152.93,47.66
-iveco,massif,10441.689944108131,1.4850008771061403
+iveco,massif,12759.571570654974,1.9398785425101215
 iveco-pegaso,daily,11856.03,70.77
-jaguar,e-pace,3878.38,10.36
-jaguar,f-pace,4885.24,13.15
-jaguar,f-type,7805.45,11.96
-jaguar,i-pace,8688.83,13.94
+jaguar,e-pace,4072.89,10.38
+jaguar,f-pace,4591.08,12.22
+jaguar,f-type,7775.21,12.27
+jaguar,i-pace,8690.33,13.94
 jaguar,s-type,2451.98,72.82
 jaguar,serie xj,5054.92,110.43
 jaguar,serie xk,8958.3,30.89
 jaguar,x-type,2429.47,37.35
-jaguar,xe,4300.85,13.22
-jaguar,xf,4232.08,16.59
+jaguar,xe,3732.18,11.42
+jaguar,xf,4094.72,15.83
 jaguar,xj,9890.89,60.47
-jeep,avenger,2895.73,7.51
-jeep,cherokee,4364.75,60.17
+jeep,avenger,2864.02,7.27
+jeep,cherokee,4259.32,58.2
 jeep,commander,3250.45,20.87
-jeep,compass,2330.49,6.52
+jeep,compass,2156.13,6.0
 jeep,gladiator,11424.92,20.77
-jeep,grand cherokee,4467.98,29.74
+jeep,grand cherokee,4439.25,29.36
 jeep,patriot,3238.29,121.31
-jeep,renegade,1947.44,7.41
-jeep,wrangler,6591.24,19.61
+jeep,renegade,1750.31,6.71
+jeep,wrangler,6592.13,19.39
 jeep,wrangler unlimited,5833.52,12.46
 kgm,korando,1270.0,0.052998638482324584
 kgm,musso,0.0,0.0
-kgm,rexton,1087.3004286866726,0.022403826576955572
+kgm,rexton,1275.4084313139329,0.017900864857094943
 kgm,tivoli,1105.0,0.05899615374782335
 kgm,torres,0.0,0.0
-kia,carens,1137.52,21.88
+kia,carens,1103.88,21.69
 kia,carnival,2010.87,34.52
-kia,cee'd sportswagon,2011.52,12.61
-kia,cee'd sporty wagon,1762.99,26.55
-kia,ceed,1811.48,8.81
-kia,ceed tourer,1395.4,3.48
+kia,cee'd sportswagon,1693.46,9.47
+kia,cee'd sporty wagon,1763.11,26.55
+kia,ceed,1630.83,7.61
+kia,ceed tourer,1501.8,3.58
 kia,cerato,745.98,30.35
 kia,clarus,100.0,0.06274509803921569
-kia,e-niro,3229.05,6.51
-kia,e-soul,9142.33,67.6
-kia,ev6,4148.03,7.38
+kia,e-niro,2837.69,6.13
+kia,e-soul,9143.33,67.61
+kia,ev6,3715.68,6.44
 kia,ev9,2422.31,2.57
 kia,joice,0.0,0.0
 kia,k2500,1025.0,0.1783328439289385
 kia,k2500 frontier,0.0,0.0
 kia,magentis,0.0,0.0
-kia,niro,2317.33,15.92
+kia,niro,2307.24,15.34
 kia,niro phev,4750.0,0.17977430555555557
 kia,opirus,1721.91,59.06
-kia,optima,2588.67,13.18
+kia,optima,2424.0,12.99
 kia,optima gt,0.0,0.0
 kia,optima hïbrido enchufable,3555.0,0.21261261956186361
 kia,optima phev,0.0,0.0
 kia,optima sw,1155.0,0.07670893319943693
-kia,picanto,1384.5,12.42
+kia,picanto,1151.05,11.06
 kia,pride,0.0,0.0
-kia,pro_cee'd,2137.89,15.58
-kia,pro_cee'd gt,12008.1,1891.71
-kia,proceed,3864.21,19.15
-kia,rio,1298.51,9.28
+kia,pro_cee'd,2149.57,15.54
+kia,pro_cee'd gt,12008.13,1891.7
+kia,proceed,3358.41,18.15
+kia,rio,1147.42,9.03
 kia,sephia ii,244.94897427831782,0.1625
 kia,shuma,479.74,31.75
-kia,sorento,2871.29,17.71
-kia,soul,3622.64,42.45
+kia,sorento,2852.37,17.96
+kia,soul,3623.18,42.46
 kia,soul ev,1125.62,5.9
-kia,sportage,2203.24,11.34
-kia,stinger,6225.72,14.2
-kia,stonic,1673.47,6.21
-kia,venga,1260.93,16.57
-kia,xceed,1825.85,5.67
+kia,sportage,2100.46,11.04
+kia,stinger,6225.51,14.2
+kia,stonic,1652.4,6.18
+kia,venga,1262.01,16.59
+kia,xceed,1736.53,5.35
 lada,214,0.0,0.0
 lada,niva,1290.01,122.09
 lamborghini,gallardo,0.0,0.0
 lancia,dedra,0.0,0.0
-lancia,delta,5169.17,87.64
+lancia,delta,5139.15,85.01
 lancia,lybra,967.4,30.48
-lancia,musa,2287.12,52.33
-lancia,phedra,1022.99,25.98
-lancia,thema,3682.43,39.77
+lancia,musa,2287.21,52.33
+lancia,phedra,1023.17,25.98
+lancia,thema,3682.53,39.77
 lancia,voyager,3034.04,17.83
 lancia,y,816.496580927726,0.4444444444444444
-lancia,ypsilon,1326.83,36.36
+lancia,ypsilon,1474.83,39.51
 lancia,ypsilon elefantino,0.0,0.0
 land-rover,defender,14478.82,128.36
-land-rover,discovery,9275.73,88.42
-land-rover,discovery 4,6716.55,23.4
-land-rover,discovery sport,5235.52,47.92
-land-rover,freelander,2571.69,38.17
-land-rover,range rover,8205.9,31.82
-land-rover,range rover evoque,4481.46,12.33
-land-rover,range rover sport,8222.62,16.95
-land-rover,range rover velar,7215.26,13.51
+land-rover,discovery,8832.52,85.81
+land-rover,discovery 4,6176.38,19.62
+land-rover,discovery sport,4964.64,47.56
+land-rover,freelander,2541.94,38.08
+land-rover,range rover,8385.82,45.61
+land-rover,range rover evoque,4249.65,10.99
+land-rover,range rover sport,6724.35,15.45
+land-rover,range rover velar,6179.6,10.84
 ldv,maxus,0.0,0.0
 lexus,ct,1459.39,6.49
 lexus,es,1374.03,2.26
@@ -560,10 +560,10 @@ lexus,is300,6336.52,78.63
 lexus,lbx,2774.97,5.2
 lexus,lc,0.0,0.0
 lexus,ls,36233.8,30.69
-lexus,ls400,1131.370849898476,0.1619047619047619
+lexus,ls400,1385.6406460551018,0.09999999999999999
 lexus,ls430,0.0,0.0
 lexus,ls460,0.0,0.0
-lexus,ls600h,8671.458944273578,0.4997309758516187
+lexus,ls600h,9535.512588913787,0.3158197304668854
 lexus,nx,3627.22,7.16
 lexus,rc,6112.81,14.87
 lexus,rx,8704.6,25.48
@@ -577,47 +577,47 @@ lexus,ux,3209.71,6.78
 lotus,elise,0.0,0.0
 lotus,emira,0.0,0.0
 lotus,exige,0.0,0.0
-lynk & co,01,1110.83,2.49
+lynk & co,01,1093.38,2.48
 mahindra,goa,0.0,0.0
-mahindra,goa pick-up,3174.62891532223,0.6671822020255239
+mahindra,goa pick-up,3193.591238715437,0.7020593460953051
 mahindra,pikup,0.0,0.0
 mahindra,xuv500,2335.29,8.69
 maserati,3200 gt,2450.0,0.08996989966555184
 maserati,coupe,1450.5,0.04621987880852361
-maserati,ghibli,6045.35,8.63
-maserati,grancabrio,21613.314312144623,0.34480668124039315
+maserati,ghibli,7837.24,14.54
+maserati,grancabrio,23841.267443937064,0.23099798125717674
 maserati,granturismo,10236.22,27.08
 maserati,grecale,5374.09,5.13
-maserati,levante,7883.12,10.64
-maserati,quattroporte,18455.59,48.35
-maxus,euniq 5,4988.876515698588,0.12129717407758163
-maxus,t90,6779.33297276034,0.13258821242539484
+maserati,levante,7815.53,10.51
+maserati,quattroporte,18455.68,48.35
+maxus,euniq 5,5163.977794943223,0.11396662406009668
+maxus,t90,8047.734670907916,0.11570480675591215
 mazda,121,0.0,0.0
 mazda,323,1134.85,75.67
 mazda,626,191.43,8.93
 mazda,929,0.0,0.0
 mazda,b-2500,1750.0,0.375
-mazda,cx-3,1526.34,7.27
-mazda,cx-30,2208.44,6.85
-mazda,cx-5,1934.65,5.65
-mazda,cx-60,6146.31,10.55
+mazda,cx-3,1511.78,7.33
+mazda,cx-30,1769.36,5.83
+mazda,cx-5,1911.2,6.1
+mazda,cx-60,5211.6,8.28
 mazda,cx-7,1726.19,25.01
 mazda,cx-80,0.0,0.0
 mazda,cx-9,3754.01,24.21
-mazda,mazda2,1357.7,17.35
-mazda,mazda3,1858.28,11.92
-mazda,mazda5,1421.25,71.51
-mazda,mazda6,1729.81,23.96
+mazda,mazda2,1371.39,17.79
+mazda,mazda3,1692.75,10.83
+mazda,mazda5,1558.71,78.19
+mazda,mazda6,2122.31,25.98
 mazda,mpv,125.0,0.03229166666666666
-mazda,mx-30,2013.7,5.9
+mazda,mx-30,2331.22,6.4
 mazda,mx3,0.0,0.0
-mazda,mx5,3674.8,25.59
+mazda,mx5,3614.81,25.92
 mazda,mx6,0.0,0.0
 mazda,premacy,928.87,53.01
-mazda,rx-8,3917.87,34.05
+mazda,rx-8,3917.89,34.05
 mazda,rx7,0.0,0.0
 mercedes-benz,100d,2022.17,71.95
-mercedes-benz,140d,1336.6625103842282,0.285663082437276
+mercedes-benz,140d,1395.22996909709,0.22939068100358426
 mercedes-benz,180d,6607.78,51.45
 mercedes-benz,190,3259.98,48.91
 mercedes-benz,200,6504.54,47.78
@@ -631,16 +631,16 @@ mercedes-benz,420,4531.74,226.65
 mercedes-benz,500,3152.73,49.89
 mercedes-benz,600,4250.0,1.0431818181818182
 mercedes-benz,amg gt,62321.99,484.09
-mercedes-benz,citan,2548.25,12.35
+mercedes-benz,citan,2538.78,12.55
 mercedes-benz,cla,9188.25,15.24
-mercedes-benz,clase a,5296.86,13.6
+mercedes-benz,clase a,5268.34,13.58
 mercedes-benz,clase b,2352.36,10.68
-mercedes-benz,clase c,6412.68,22.66
+mercedes-benz,clase c,6400.23,22.77
 mercedes-benz,clase cl,6398.82,39.49
 mercedes-benz,clase cla,4493.93,11.81
 mercedes-benz,clase clc,1900.31,31.1
 mercedes-benz,clase clk,3424.98,31.14
-mercedes-benz,clase cls,4008.96,29.91
+mercedes-benz,clase cls,3788.22,28.76
 mercedes-benz,clase e,6444.17,31.39
 mercedes-benz,clase g,19877.86,25.52
 mercedes-benz,clase gl,5945.9,27.82
@@ -672,35 +672,35 @@ mercedes-benz,eqs suv,11757.93,11.74
 mercedes-benz,eqt,4010.44,7.4
 mercedes-benz,eqv,13797.88,12.45
 mercedes-benz,gla,5311.7,8.54
-mercedes-benz,glb,5318.92,6.9
+mercedes-benz,glb,6901.15,8.41
 mercedes-benz,glc,6959.3,7.14
 mercedes-benz,glc coupe,6146.4,7.96
 mercedes-benz,gle,8844.0,8.08
 mercedes-benz,gle coupe,8348.04,7.98
 mercedes-benz,gls,16913.3,21.38
 mercedes-benz,mercedes-amg gt,16214.04,11.34
-mercedes-benz,mercedes-amg sl,14319.457915717341,0.4470012626262626
+mercedes-benz,mercedes-amg sl,14515.078366994785,0.41761363636363635
 mercedes-benz,sl-klasse,6143.85,68.51
 mercedes-benz,sprinter,9996.45,131.19
 mercedes-benz,vaneo,962.6,35.41
 mercedes-benz,viano,6311.12,30.86
-mercedes-benz,vito,7404.4,121.05
+mercedes-benz,vito,7380.33,120.9
 mg,ehs,4295.39,28.99
 mg,hs,2940.71,7.16
 mg,marvel r,3921.3,8.01
 mg,mg3 hybrid+,1744.58,5.77
-mg,mg4,5149.38,17.37
+mg,mg4,5154.23,17.38
 mg,mg5,2636.0,7.28
 mg,mgf,713.8,12.99
-mg,tf,1131.370849898476,0.14197637568424085
+mg,tf,1385.6406460551018,0.0898876404494382
 mg,zr,1523.75,71.48
 mg,zs,1488.79,7.43
-mg,zs ev,5344.87,17.84
-mg,zt,1606.8213964221413,2.8485576923076925
+mg,zs ev,5345.94,17.85
+mg,zt,1622.4980739587952,2.506730769230769
 mini,clubman,2593.58,11.0
 mini,cooper,4605.75,31.18
 mini,countryman,3765.65,10.73
-mini,mini,3464.64,20.66
+mini,mini,3483.12,20.71
 mini,paceman,3982.52,18.73
 mitsubishi,3000 gt,706.16,3.86
 mitsubishi,asx,1538.38,7.51
@@ -709,7 +709,7 @@ mitsubishi,carisma,699.31,32.67
 mitsubishi,colt,3852.25,83.36
 mitsubishi,eclipse,5110.75,43.32
 mitsubishi,eclipse cross,1944.11,3.75
-mitsubishi,galant,1192.424001771182,0.6328125
+mitsubishi,galant,1198.95788082818,0.6629464285714286
 mitsubishi,grandis,693.75,13.54
 mitsubishi,i-miev,0.0,0.0
 mitsubishi,l200,4678.71,23.84
@@ -723,310 +723,310 @@ mitsubishi,space star,1951.29,23.9
 mitsubishi,space wagon,1703.43,183.06
 morgan,04-apr,16995.0,0.7010777467993599
 morgan,4,0.0,0.0
-morgan,roadster,33028.607129106866,1.4003758642094224
+morgan,roadster,36004.62933198082,1.663314711359404
 nissan,100 nx,2233.89,57.08
 nissan,200 sx,16007.81,710.53
 nissan,300 zx,9883.39,51.55
 nissan,350z,1675.35,7.61
-nissan,370z,12922.15,44.37
-nissan,almera,1552.9,56.7
+nissan,370z,12924.86,44.38
+nissan,almera,1545.43,55.8
 nissan,almera tino,737.67,29.73
 nissan,ariya,3317.6,6.31
 nissan,cabstar,7395.81,429.44
 nissan,cabstar e,3887.76,59.33
 nissan,camion,5687.05,73.83
 nissan,cube,0.0,0.0
-nissan,e-nv200 evalia,3820.62,26.44
-nissan,evalia,4958.06,38.32
-nissan,gt-r,29159.82,47.67
-nissan,juke,1897.95,8.46
-nissan,leaf,2814.57,12.95
-nissan,maxima qx,765.1471672168694,0.35174535212026875
-nissan,micra,1731.57,13.47
-nissan,murano,2671.98,27.86
-nissan,navara,3620.35,71.26
-nissan,note,951.46,12.83
+nissan,e-nv200 evalia,3820.61,26.44
+nissan,evalia,4957.93,38.32
+nissan,gt-r,29159.68,47.67
+nissan,juke,1879.75,8.49
+nissan,leaf,2399.9,10.66
+nissan,maxima qx,765.1472080586847,0.35178199607819355
+nissan,micra,1651.39,13.28
+nissan,murano,2654.43,28.29
+nissan,navara,3547.54,71.16
+nissan,note,930.14,12.71
 nissan,np300 navara,10790.18,160.98
 nissan,np300 pick up,2881.37,30.6
 nissan,nv200,4120.39,27.65
-nissan,nv200 evalia,3568.77,17.99
-nissan,nv300,9708.4,42.81
-nissan,pathfinder,4071.65,50.29
+nissan,nv200 evalia,3568.97,17.99
+nissan,nv300,9709.26,42.82
+nissan,pathfinder,4212.16,52.23
 nissan,patrol,4265.14,70.52
 nissan,patrol gr,5826.56,99.72
 nissan,pick-up,2874.87,21.47
-nissan,pixo,628.82,11.56
+nissan,pixo,628.74,11.56
 nissan,primastar,17228.48,129.57
 nissan,primera,964.23,57.59
-nissan,pulsar,1383.58,8.56
-nissan,qashqai,2111.28,16.44
+nissan,pulsar,1335.9,8.01
+nissan,qashqai,1898.3,15.76
 nissan,qashqai+2,2161.7,22.1
 nissan,serena,1625.7,36.91
 nissan,sunny,250.0,0.14583333333333331
 nissan,terrano,3052.46,48.35
 nissan,terrano ii,3160.32,82.94
-nissan,tiida,2367.4,54.0
+nissan,tiida,2367.54,54.0
 nissan,townstar,3276.3,10.17
 nissan,trade,3394.99,52.19
 nissan,vanette,2815.15,110.09
 nissan,vanette cargo,1503.84,71.91
-nissan,x-trail,2822.93,14.3
+nissan,x-trail,2704.98,13.69
 omoda,5,815.86,2.14
 opel,adam,1562.33,11.56
 opel,agila,2248.4,44.54
 opel,ampera,3073.54,27.56
-opel,antara,1850.14,26.42
+opel,antara,1886.15,26.99
 opel,ascona,1850.0,1.228864734299517
-opel,astra,1626.53,30.69
+opel,astra,1607.35,29.79
 opel,astra electric,4491.0,11.05
 opel,astra phev,4236.2,9.67
-opel,cabrio,1672.27,11.76
+opel,cabrio,1629.63,10.4
 opel,calibra,1677.82,80.17
-opel,combo,3095.49,43.33
-opel,combo life,2525.37,10.29
+opel,combo,3033.44,41.11
+opel,combo life,2505.11,10.28
 opel,combo-e life,4674.28,16.94
-opel,corsa,1649.02,21.17
-opel,corsa electric,3780.699523750716,0.12106035104261831
-opel,corsa-e,3069.64,13.28
-opel,crossland,1479.12,6.19
-opel,crossland x,2012.61,11.08
+opel,corsa,1573.49,20.28
+opel,corsa electric,4618.859888183086,0.07896825599278039
+opel,corsa-e,2943.0,12.5
+opel,crossland,1436.48,5.93
+opel,crossland x,1919.79,10.94
 opel,frontera,1416.29,61.06
 opel,grandland,3493.71,7.0
-opel,grandland phev,4586.04,7.92
+opel,grandland phev,4897.19,9.08
 opel,grandland x,2471.94,68.06
 opel,grandland x phev,4051.55,12.52
 opel,gt,2301.39,11.41
 opel,gtc,5120.72,70.94
-opel,insignia,2132.45,18.93
+opel,insignia,2075.52,18.34
 opel,kadett,5468.82,78.06
 opel,karl,1411.18,14.16
-opel,meriva,1411.07,33.26
-opel,mokka,2444.5,10.35
-opel,mokka x,1154.17,5.05
-opel,mokka-e,4040.64,13.3
+opel,meriva,1454.7,33.96
+opel,mokka,2505.43,10.39
+opel,mokka x,1139.35,5.08
+opel,mokka-e,3941.85,12.35
 opel,monterey,1294.5,59.35
 opel,movano,11361.55,72.45
 opel,omega,1337.33,62.89
-opel,signum,262.46692913372704,0.17120551924473493
+opel,signum,294.3920288775949,0.1574074074074074
 opel,speedster,0.0,0.0
 opel,tigra,1214.51,55.63
-opel,vectra,1330.06,43.34
-opel,vivaro,6120.09,35.55
-opel,zafira,1579.12,48.18
-opel,zafira life,18049.86,535.56
-opel,zafira tourer,1607.99,12.43
+opel,vectra,1363.0,41.8
+opel,vivaro,5855.35,35.17
+opel,zafira,1508.82,46.14
+opel,zafira life,18048.2,535.52
+opel,zafira tourer,1413.55,11.04
 opel,zafira-e life,0.0,0.0
 peugeot,1007,907.4,20.69
 peugeot,106,2049.52,100.41
-peugeot,107,966.12,22.45
-peugeot,108,1480.33,12.71
-peugeot,2008,1910.18,10.75
+peugeot,107,928.95,20.75
+peugeot,108,1563.3,13.46
+peugeot,2008,1879.09,10.25
 peugeot,205,2503.21,51.14
 peugeot,206,1138.43,45.45
 peugeot,206 +,1126.56,21.14
 peugeot,206 sw,807.54,44.08
 peugeot,207,1229.67,27.78
 peugeot,207 +,976.65,9.93
-peugeot,208,1786.4,10.82
-peugeot,3008,2026.04,8.22
-peugeot,3008 hybrid,4666.62,12.04
-peugeot,3008 plug-in hybrid,14276.396798756876,4.569946554193079
+peugeot,208,1707.33,10.16
+peugeot,3008,1933.2,7.84
+peugeot,3008 hybrid,4672.35,12.05
+peugeot,3008 plug-in hybrid,15410.218741687824,5.732185550316712
 peugeot,306,1098.67,51.94
 peugeot,307,1076.22,44.36
 peugeot,307 sw,1113.63,52.06
-peugeot,308,2012.67,21.87
+peugeot,308,1983.08,21.93
 peugeot,309,5650.0,2.5801666666666665
 peugeot,4007,2617.61,60.59
 peugeot,4008,5200.35,432.18
 peugeot,405,405.52,21.63
 peugeot,406,918.53,39.05
-peugeot,407,1454.18,38.41
-peugeot,407 sw,1318.37,32.48
+peugeot,407,1521.15,39.95
+peugeot,407 sw,1302.69,32.19
 peugeot,408,3181.5,7.19
-peugeot,5008,2067.2,10.2
+peugeot,5008,1965.68,9.63
 peugeot,5008 hybrid,10436.5,31.35
 peugeot,505,2650.0,0.6563657407407407
-peugeot,508,2118.69,11.74
+peugeot,508,2044.27,11.15
 peugeot,508 hybrid,7023.55,17.89
-peugeot,605,1838.4776310850236,0.6992424242424242
+peugeot,605,2251.6660498395404,0.8125
 peugeot,607,1570.75,50.03
 peugeot,806,1348.22,138.6
 peugeot,807,2146.15,47.41
-peugeot,bipper,1332.27,23.0
+peugeot,bipper,1332.75,23.01
 peugeot,boxer,8658.82,100.0
-peugeot,e-2008,3768.48,9.02
-peugeot,e-208,4008.61,28.83
+peugeot,e-2008,3701.87,8.58
+peugeot,e-208,4194.42,29.57
 peugeot,e-3008,3177.49,5.12
-peugeot,e-308,5311.8,12.91
+peugeot,e-308,5345.5,12.99
 peugeot,e-5008,5250.0,0.6943548387096774
-peugeot,e-rifter,6841.63,26.69
-peugeot,e-traveller,14725.85,135.43
-peugeot,ion,2872.4012409287266,0.5444411897603058
+peugeot,e-rifter,6861.26,26.77
+peugeot,e-traveller,14725.98,135.43
+peugeot,ion,2909.530317193252,0.5589823156489824
 peugeot,j5,3061.46,52.89
-peugeot,partner,2404.33,34.15
+peugeot,partner,2299.4,32.84
 peugeot,partner origin,2475.0,0.45233608306073103
-peugeot,rcz,1684.84,9.77
-peugeot,rifter,3305.71,15.58
-peugeot,traveller,7474.58,21.41
-piaggio,porter,944.3913383762051,0.4179276315789474
-piaggio,quargo,2389.3281249943234,1.960153256704981
-polestar,2,8552.4,17.99
-pontiac,firebird,4142.783635431617,0.5067040132635969
-pontiac,trans am,7591.885059061418,1.833909328817734
+peugeot,rcz,1843.98,11.56
+peugeot,rifter,2777.84,13.03
+peugeot,traveller,7399.46,20.69
+piaggio,porter,952.6279441628825,0.4378289473684211
+piaggio,quargo,2786.2758896658697,0.6091954022988505
+polestar,2,8552.37,17.99
+pontiac,firebird,4341.964561117467,0.4308806789047277
+pontiac,trans am,7649.55064039712,1.6608990147783251
 porsche,718,14839.0,12.91
-porsche,911,18282.8,23.32
+porsche,911,18862.98,23.9
 porsche,928,19425.04,36.86
 porsche,944,4360.59,21.53
-porsche,968,3120.1851796897495,0.10454782993895755
+porsche,968,3521.836642056717,0.09177961847389558
 porsche,boxster,4371.53,13.16
-porsche,cayenne,7579.09,18.77
+porsche,cayenne,7615.05,18.76
 porsche,cayenne coupe,10842.2,7.72
 porsche,cayman,5899.16,10.3
 porsche,macan,9540.98,38.71
-porsche,panamera,11324.16,13.47
+porsche,panamera,11579.92,13.67
 porsche,taycan,17694.89,17.67
 renault,5,4395.01,188.72
-renault,alpine,14142.13562373095,0.3333333333333333
-renault,arkana,2027.71,5.24
-renault,austral,3377.48,7.26
+renault,alpine,17320.508075688773,0.16666666666666666
+renault,arkana,1507.07,4.06
+renault,austral,2906.71,5.85
 renault,avantime,1995.5,0.37437471852318527
-renault,captur,1802.25,8.1
-renault,clio,2186.45,24.36
-renault,clio campus,1299.32,65.05
+renault,captur,1780.7,8.05
+renault,clio,2008.5,22.73
+renault,clio campus,1299.54,65.06
 renault,clio iii,2408.56,106.13
-renault,espace,3556.41,16.05
+renault,espace,3393.83,16.18
 renault,express,532.16,34.66
 renault,fluence,1508.44,20.85
 renault,fuego,1600.0,0.32481203007518794
 renault,grand espace,1594.29,37.69
-renault,grand kangoo combi,4367.09,59.54
-renault,grand modus,1810.4,58.94
-renault,grand scenic,1475.85,18.71
-renault,kadjar,2036.82,7.23
-renault,kangoo,1909.65,44.44
-renault,kangoo combi,3619.25,15.16
+renault,grand kangoo combi,4367.45,59.54
+renault,grand modus,1811.29,58.97
+renault,grand scenic,1488.6,18.77
+renault,kadjar,1973.22,6.94
+renault,kangoo,1895.65,44.96
+renault,kangoo combi,4366.15,18.75
 renault,kangoo combi e-tech,0.0,0.0
-renault,koleos,1899.58,12.5
-renault,laguna,1286.5,29.5
+renault,koleos,1883.02,12.04
+renault,laguna,1225.07,27.85
 renault,latitude,2171.67,22.21
 renault,mascott,8027.23,67.75
 renault,master,9089.36,59.79
 renault,master propulsion,9150.0,0.8658358208955224
 renault,maxity,0.0,0.0
-renault,megane,2974.34,28.75
-renault,megane e-tech,3697.06,8.88
+renault,megane,2485.26,27.59
+renault,megane e-tech,4217.63,11.47
 renault,modus,1613.19,39.12
 renault,r11,1633.79,54.44
 renault,r18,1385.83,20.52
 renault,r19,1522.9,64.6
 renault,r21,1364.5,37.15
-renault,r25,1433.7208778404379,0.2571428571428572
+renault,r25,1443.3756729740644,0.23809523809523805
 renault,r4,2213.95,101.53
 renault,r5,8217.3,64.17
 renault,r6,105.0,0.03631720430107527
 renault,r9,850.04,27.19
 renault,rafale,0.0,0.0
 renault,safrane,0.0,0.0
-renault,scenic,1672.4,30.51
-renault,scenic e-tech,23401.053513796243,5.861513990944853
+renault,scenic,1602.56,30.89
+renault,scenic e-tech,27746.490018258766,8.216816490698845
 renault,spider,1000.0,0.014928698752228164
 renault,symbioz,1447.61,3.47
-renault,talisman,1892.22,8.52
-renault,trafic,6024.39,69.22
-renault,twingo,2237.81,22.3
+renault,talisman,1910.38,8.77
+renault,trafic,5935.16,68.07
+renault,twingo,2302.95,22.94
 renault,twingo e-tech,2359.22,9.76
 renault,twizy,2923.18,43.4
-renault,vel satis,1961.0,97.4
+renault,vel satis,1961.02,97.4
 renault,wind,0.0,0.0
-renault,zoe,3028.57,23.31
+renault,zoe,2967.21,23.02
 renault v.i.,camion,9200.0,0.4849413676999884
 rolls-royce,silver seraph,0.0,0.0
 rolls-royce,silvier,0.0,0.0
 rover,100,0.0,0.0
 rover,200,1635.49,53.71
-rover,25,268.0951323690902,0.14280855560847822
+rover,25,278.3882181415011,0.14901762324362944
 rover,400,2260.87,54.68
 rover,45,544.15,33.38
-rover,600,321.3545549700517,0.1997368375970763
+rover,600,329.43132820058264,0.19022555961626314
 rover,75,772.46,39.67
 rover,800,550.0,0.348731884057971
 rover,cabriolet,0.0,0.0
 rover,mini,6105.83,52.14
-rover,sd,4021.426985536353,0.7726785714285714
+rover,sd,4069.7051490249264,0.7048997493734336
 rover,streetwise,0.0,0.0
-saab,09-mar,2900.1,44.6
-saab,09-may,2678.5,54.34
+saab,09-mar,2906.97,40.68
+saab,09-may,2678.6,54.34
 saab,900,2495.26,131.71
 saab,9000,0.0,0.0
 santana,300,1034.04,14.32
 santana,350,250.5,0.059153663415853965
-santana,anibal,1898.9405434346806,0.22507920639970402
+santana,anibal,1976.916854599606,0.20727463879392866
 santana,anibal pick up,0.0,0.0
-seat,alhambra,2532.33,20.5
-seat,altea,1531.61,31.59
-seat,altea freetrack,1070.74,14.73
-seat,altea xl,1351.49,16.32
-seat,arona,1503.01,6.51
+seat,alhambra,2304.32,19.02
+seat,altea,1498.63,30.2
+seat,altea freetrack,1070.72,14.73
+seat,altea xl,1362.29,15.93
+seat,arona,1476.96,6.35
 seat,arosa,885.26,74.55
-seat,ateca,1937.4,6.25
-seat,cordoba,846.49,36.76
-seat,exeo,2135.51,20.6
-seat,ibiza,1636.36,29.54
+seat,ateca,1859.1,5.81
+seat,cordoba,821.08,36.41
+seat,exeo,1971.56,19.28
+seat,ibiza,1459.05,28.16
 seat,inca,456.53,27.19
-seat,leon,2583.3,24.65
+seat,leon,2272.49,23.14
 seat,malaga,1423.16,30.3
 seat,marbella,1314.83,66.91
-seat,mii,2813.8,21.68
+seat,mii,2819.12,22.01
 seat,ronda,0.0,0.0
-seat,tarraco,3095.61,6.52
-seat,terra,1746.577669488407,0.8535799516572452
-seat,toledo,1221.78,35.47
+seat,tarraco,2551.57,5.97
+seat,terra,2082.2424610661137,1.014445371142619
+seat,toledo,1196.38,34.13
 seres,seres 3,1500.0,0.03903043887492554
 seres,seres 5,0.0,0.0
-skoda,citigo,1481.2,9.58
-skoda,enyaq,10098.65,21.87
+skoda,citigo,1546.46,9.49
+skoda,enyaq,10098.93,21.87
 skoda,enyaq coupe,4141.33,6.67
-skoda,fabia,1488.82,18.57
-skoda,felicia,3196.8734726291564,1.3606442577030815
-skoda,kamiq,1813.08,5.79
-skoda,karoq,2142.97,5.44
-skoda,kodiaq,4522.18,9.83
-skoda,octavia,3436.63,23.69
-skoda,octavia tour,15542.09,146.12
-skoda,rapid,2218.67,22.33
-skoda,roomster,2881.77,36.85
+skoda,fabia,1390.09,16.76
+skoda,felicia,3451.0867853474797,0.823529411764706
+skoda,kamiq,1583.33,5.26
+skoda,karoq,2506.97,6.2
+skoda,kodiaq,2913.21,6.62
+skoda,octavia,2740.92,20.24
+skoda,octavia tour,15542.18,146.14
+skoda,rapid,2319.13,23.5
+skoda,roomster,2881.87,36.85
 skoda,s,0.0,0.0
-skoda,scala,2309.66,7.5
-skoda,scout,7120.04,127.22
-skoda,spaceback,1503.07,9.51
-skoda,superb,4662.29,25.21
-skoda,yeti,1627.5,8.9
+skoda,scala,1292.57,4.45
+skoda,scout,7120.38,127.22
+skoda,spaceback,1478.83,9.97
+skoda,superb,4110.12,23.97
+skoda,yeti,1549.92,8.54
 skywell,be11,5715.39,13.77
 smart,#1,2998.22,6.63
-smart,#3,3240.37034920393,0.07024029027799562
+smart,#3,3570.714214271425,0.06127120926474549
 smart,cabrio,1173.8,29.14
 smart,city-coupe,687.07,19.62
 smart,crossblade,0.0,0.0
-smart,forfour,1599.09,12.4
-smart,fortwo,2491.06,21.57
-smart,roadster,6291.01,45.22
-smart,smart,1835.88,37.61
+smart,forfour,1590.35,12.38
+smart,fortwo,2366.92,21.35
+smart,roadster,6291.03,45.22
+smart,smart,1835.92,37.62
 ssangyong,actyon,2709.38,87.59
 ssangyong,actyon sports pick up,0.0,0.0
-ssangyong,family,590.668171555645,0.1707084068195179
+ssangyong,family,695.221787153807,0.11234567901234567
 ssangyong,k4d,0.0,0.0
-ssangyong,korando,3389.27,22.29
+ssangyong,korando,2825.48,20.13
 ssangyong,korando kj,1831.93,22.99
 ssangyong,kyron,1942.53,41.77
 ssangyong,musso,3400.67,93.14
-ssangyong,rexton,2101.69,24.36
+ssangyong,rexton,2128.56,24.41
 ssangyong,rexton ii,1485.27,25.52
-ssangyong,rodius,2659.95,81.61
+ssangyong,rodius,2903.84,84.09
 ssangyong,tivoli,1728.02,9.18
 ssangyong,tivoli grand,3515.73,15.53
 ssangyong,torres,3291.76,8.43
 ssangyong,xlv,5303.19,59.78
-subaru,b9 tribeca,2054.8046676563254,0.7369420702754036
+subaru,b9 tribeca,2081.6659994661327,0.7692307692307692
 subaru,brz,12681.72,33.87
 subaru,crosstrek,3667.42,7.91
 subaru,forester,3907.21,103.48
@@ -1036,22 +1036,22 @@ subaru,legacy,3724.71,43.19
 subaru,levorg,3646.98,15.79
 subaru,outback,3251.67,33.07
 subaru,solterra,165825640328.6,300657526.1
-subaru,tribeca,2083.266665599966,0.17408871321914798
+subaru,tribeca,2310.8440016582686,0.12753623188405797
 subaru,wrx sti,8045.06,20.14
 subaru,xv,1487.14,6.05
 suzuki,across,5251.92,10.41
 suzuki,alto,1664.04,33.54
 suzuki,baleno,4862.46,96.92
-suzuki,celerio,621.4096877262214,0.06247277924413364
+suzuki,celerio,645.5811335533281,0.061267405884957965
 suzuki,grand vitara,2902.04,42.01
-suzuki,grand vitara xl-7,1558.9206379914135,0.20797927515306913
+suzuki,grand vitara xl-7,1688.8754641279309,0.1566376880227952
 suzuki,ignis,3560.31,30.36
 suzuki,jimny,2850.71,26.48
 suzuki,kizashi,955.0,0.07417737203064903
 suzuki,liana,50.0,0.035759897828863345
 suzuki,s-cross,3141.53,14.62
 suzuki,samurai,2680.76,90.55
-suzuki,splash,1334.829108912448,0.34037811380055305
+suzuki,splash,1354.0771765302006,0.32088509406748167
 suzuki,swace,3575.79,13.73
 suzuki,swift,1448.72,12.66
 suzuki,sx4,1533.59,25.72
@@ -1062,15 +1062,15 @@ swm,g01,3791.68,13.66
 swm,g01f,2991.78,12.52
 talbot,horizon,0.0,0.0
 talbot,samba,0.0,0.0
-tata,aria,8573.214099741122,1.261111111111111
+tata,aria,9682.458365518542,0.5777777777777778
 tata,grand safari,1470.89,97.25
 tata,indica,499.76,24.99
 tata,indigo,0.0,0.0
 tata,safari,600.0,0.16193181818181818
-tata,telco,1405.6790371758254,0.23220968235975234
+tata,telco,1515.8498166595089,0.17456825396825396
 tata,telcosport,200.0,0.10101010101010101
 tata,tl pick up,0.0,0.0
-tata,vista,505.97,13.39
+tata,vista,505.96,13.39
 tata,xenon,1600.0,0.1312169312169312
 tata,xenon pick up,0.0,0.0
 tesla,model 3,5440.89,10.97
@@ -1082,103 +1082,103 @@ toyota,auris,1334.33,9.64
 toyota,avensis,1336.35,23.36
 toyota,avensis verso,300.0,0.08391608391608392
 toyota,aygo,1034.51,19.23
-toyota,aygo x cross,1926.67,7.63
+toyota,aygo x cross,1940.56,7.75
 toyota,bz4x,2772.29,5.21
 toyota,c-hr,2198.3,6.3
 toyota,camry,1564.46,3.87
 toyota,celica,3568.77,35.18
-toyota,corolla,2131.14,11.13
+toyota,corolla,2130.05,11.4
 toyota,corolla cross,2960.74,6.86
 toyota,corolla sedan,7429.47,73.61
-toyota,corolla verso,1064.24,17.91
+toyota,corolla verso,994.68,17.04
 toyota,dyna,18751.57,300.64
 toyota,gr supra,1955.0,0.034371884562434715
-toyota,gr yaris,2000.66,3.33
+toyota,gr yaris,1991.82,3.32
 toyota,gr86,5911.03,14.39
 toyota,gt86,7520.98,38.3
 toyota,highlander,20900.47,141.72
-toyota,hilux,5372.46,24.13
+toyota,hilux,5397.86,24.43
 toyota,iq,2053.47,39.44
-toyota,land cruiser,6007.15,90.84
+toyota,land cruiser,6038.43,91.46
 toyota,land cruiser 100,7930.47,34.16
-toyota,land cruiser 200,8294.388163089548,0.24070072746543336
+toyota,land cruiser 200,9051.933495115836,0.24828353946001003
 toyota,land cruiser 80,12509.04,557.26
 toyota,land cruiser 90,5321.97,27.18
 toyota,mr2,1501.45,16.68
-toyota,paseo,1353.3908033774526,0.54024369196783
+toyota,paseo,1547.3094928509508,0.28825031928480205
 toyota,previa,925.0,0.2773060796645702
 toyota,prius,2097.64,18.2
 toyota,prius+,3407.43,13.23
-toyota,proace city,6286.3,67.18
-toyota,proace city verso,3766.32,11.98
-toyota,proace verso,6650.18,20.03
-toyota,rav4,2679.3,13.48
+toyota,proace city,6287.55,67.2
+toyota,proace city verso,3766.12,11.98
+toyota,proace verso,7758.17,21.3
+toyota,rav4,2638.12,12.69
 toyota,supra,8999.63,42.6
-toyota,urban cruiser,1628.9720685143745,0.22964388950776934
+toyota,urban cruiser,1714.577207360462,0.24692370397846647
 toyota,verso,1644.59,16.02
 toyota,yaris,1408.87,11.88
 toyota,yaris cross,2255.04,6.19
 toyota,yaris verso,0.0,0.0
 umm,100,3250.0,0.375
 vaz,215,0.0,0.0
-volkswagen,amarok,11164.66,140.08
-volkswagen,arteon,3576.32,8.74
-volkswagen,beetle,4084.93,19.1
-volkswagen,bora,943.03,39.56
-volkswagen,caddy,3588.23,23.08
-volkswagen,california,7675.5,17.08
-volkswagen,caravelle,4694.74,34.92
-volkswagen,cc,2669.99,12.37
+volkswagen,amarok,11780.74,142.87
+volkswagen,arteon,3205.23,7.39
+volkswagen,beetle,4111.81,21.14
+volkswagen,bora,966.83,40.35
+volkswagen,caddy,3573.97,22.91
+volkswagen,california,7301.51,17.38
+volkswagen,caravelle,4851.52,34.71
+volkswagen,cc,2689.96,12.81
 volkswagen,corrado,4051.82,16.55
-volkswagen,crafter,9869.11,210.92
+volkswagen,crafter,9825.04,210.61
 volkswagen,e-up!,2711.36,19.48
-volkswagen,eos,2823.32,23.09
+volkswagen,eos,2575.05,19.51
 volkswagen,fox,394.09,8.86
-volkswagen,golf,3416.17,28.6
-volkswagen,golf plus,1316.28,16.31
-volkswagen,golf sportsvan,1671.91,8.68
-volkswagen,grand california,6241.435632128237,0.07494869508600524
+volkswagen,golf,2953.25,26.73
+volkswagen,golf plus,1272.66,15.89
+volkswagen,golf sportsvan,1581.48,8.63
+volkswagen,grand california,7026.540756303915,0.06292158983148302
 volkswagen,id. buzz,2743.05,5.73
-volkswagen,id.3,3480.98,7.58
-volkswagen,id.4,9447.38,134.75
-volkswagen,id.5,18836.69,136.22
+volkswagen,id.3,3385.3,7.3
+volkswagen,id.4,9602.64,134.72
+volkswagen,id.5,17907.06,129.4
 volkswagen,id.7,2988.76,4.6
-volkswagen,jetta,1569.62,48.31
+volkswagen,jetta,1557.51,48.14
 volkswagen,lt,9908.02,105.08
-volkswagen,lupo,1260.54,69.75
-volkswagen,multivan,5809.83,15.04
-volkswagen,new beetle,1887.77,32.37
-volkswagen,passat,2307.38,23.6
-volkswagen,passat cc,2566.89,89.78
-volkswagen,phaeton,3095.72,52.56
-volkswagen,polo,1815.3,16.95
+volkswagen,lupo,1260.5,69.75
+volkswagen,multivan,5903.4,15.14
+volkswagen,new beetle,1857.65,31.12
+volkswagen,passat,1799.96,21.0
+volkswagen,passat cc,2504.82,87.06
+volkswagen,phaeton,3095.94,52.57
+volkswagen,polo,1436.78,15.83
 volkswagen,santana,0.0,0.0
-volkswagen,scirocco,4185.01,18.66
-volkswagen,sharan,3005.76,21.03
-volkswagen,t-cross,1932.01,6.52
-volkswagen,t-roc,3018.04,7.92
-volkswagen,taigo,2995.02,8.79
+volkswagen,scirocco,3863.73,16.32
+volkswagen,sharan,2736.86,19.08
+volkswagen,t-cross,1560.02,5.32
+volkswagen,t-roc,2062.43,5.76
+volkswagen,taigo,2637.38,7.7
 volkswagen,taro,0.0,0.0
-volkswagen,tiguan,3728.05,10.75
-volkswagen,tiguan allspace,3926.32,9.16
-volkswagen,touareg,5212.12,25.52
-volkswagen,touran,2471.21,17.4
-volkswagen,transporter,6467.36,51.18
+volkswagen,tiguan,3247.45,9.36
+volkswagen,tiguan allspace,3309.94,7.3
+volkswagen,touareg,5079.31,24.66
+volkswagen,touran,2217.99,16.49
+volkswagen,transporter,6340.0,50.22
 volkswagen,up!,1296.96,11.55
 volkswagen,vento,978.72,68.8
 volvo,240,1551.54,66.53
 volvo,340,0.0,0.0
 volvo,360,0.0,0.0
 volvo,440,350.0,0.3354166666666667
-volvo,460,326.7518171334323,0.1828670856610801
-volvo,480,1638.596960817394,0.8147576530612244
-volvo,740,2333.809475228573,0.7243325705568268
+volvo,460,358.0907706154963,0.18503627646354162
+volvo,480,1675.559608011604,0.901171343537415
+volvo,740,2829.6053906272277,0.25425883549453343
 volvo,850,1546.0,149.03
 volvo,940,1603.46,31.78
 volvo,960,0.0,0.0
 volvo,c30,1398.61,16.04
 volvo,c40,10360.94,110.76
-volvo,c70,3881.23,62.1
+volvo,c70,3881.39,62.1
 volvo,ex30,4415.98,7.94
 volvo,s40,1531.63,74.04
 volvo,s60,2421.25,38.02
@@ -1192,7 +1192,7 @@ volvo,v50,1559.66,44.57
 volvo,v60,3373.42,8.69
 volvo,v60 cross country,2311.68,5.92
 volvo,v70,2135.32,110.4
-volvo,v70 xc,390.46980250291654,0.15396865125970421
+volvo,v70 xc,425.87165515759165,0.14191647894645643
 volvo,v90,3774.88,7.66
 volvo,v90 cross country,3585.4,6.77
 volvo,xc40,3443.84,7.01

@@ -54,7 +54,60 @@ class CarPricePredictionApp:
                                             options=brand_models_list,
                                             index= None, #default_model_index,
                                             placeholder='Select a model')
+                
+                if selected_model:
+                    selected_transmission = st.multiselect(label='Select Transmission(s)',
+                                                        options=['manual', 'automatic'],
+                                                        default=['manual', 'automatic'])
+
+                    selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
+       
+            with middle_col:
+                if selected_model:
+                    fuel_options = self.results_df[(self.results_df['brand'] == selected_brand) 
+                                                        & (self.results_df['model'] == selected_model)]['fuel'].unique()
+
+                    selected_fuel = st.multiselect(label="Select fuel type",
+                                                    options=fuel_options,
+                                                    default=fuel_options)                  
                     
+                    selected_km = st.slider(label='Select mileage (km)',
+                                            min_value=0,
+                                            max_value=500_000,
+                                            value=(0, 200_000),
+                                            step=25_000)
+
+                    selected_age = st.slider(label='Select age of car (years)',
+                                            min_value=0,
+                                            max_value=25,
+                                            value=(0, 12),
+                                            step=1)
+                    
+                    cv_options = self.results_df[(self.results_df['brand'] == selected_brand) 
+                                                        & (self.results_df['model'] == selected_model)]['cv'].dropna().astype(int).sort_values().unique()
+                    
+                    if len(cv_options) >= 2:
+                        left_col_cv, right_col_cv = st.columns(spec=[0.5, 0.5], gap='small')
+                        with left_col_cv:
+                            selected_cv_min = st.selectbox(label='Select Min Horsepower (CV)',
+                                                    options=cv_options,
+                                                    index= 0)
+                        with right_col_cv:
+                            selected_cv_max = st.selectbox(label='Select Max Horsepower (CV)',
+                                                    options=cv_options,
+                                                    index= (len(cv_options)-1)) if len(cv_options) > 0 else 0 #default_model_index,
+                                                    # placeholder='Select a model')
+                    else:
+                        selected_cv_min = 0
+                        selected_cv_max = 1000
+                    
+                else:
+                    selected_transmission = None
+                    selected_fuel = None
+                    selected_km = None
+                    selected_age = None
+                    selected_cv_min = 0
+                    selected_cv_max = 1000
 
             with right_col:
                 if selected_model:
@@ -79,32 +132,9 @@ class CarPricePredictionApp:
                     else:
                         st.info('Car image not available')
                 
-            with middle_col:
-                if selected_model:
-                    selected_transmission = st.multiselect(label='Select Transmission(s)',
-                                                    options=['manual', 'automatic'],
-                                                    default=['manual', 'automatic'])
+            
+        return selected_brand, selected_model, selected_transmission, selected_fuel, selected_km, selected_age, selected_cv_min, selected_cv_max
 
-                    selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
-
-                    selected_km = st.slider(label='Select mileage (km)',
-                                            min_value=0,
-                                            max_value=500_000,
-                                            value=(0, 200_000),
-                                            step=25_000)
-
-                    selected_age = st.slider(label='Select age of car (years)',
-                                            min_value=0,
-                                            max_value=25,
-                                            value=(0, 12),
-                                            step=1)
-                else:
-                    selected_transmission = None
-                    selected_km = None
-                    selected_age = None
-
-
-        return selected_brand, selected_model, selected_transmission, selected_km, selected_age
 
     def plot_charts(self, selected_car, selected_brand, selected_model):
         """Plot price vs mileage and price vs age in two columns."""
@@ -176,15 +206,17 @@ class CarPricePredictionApp:
         """Main entry point to run the Streamlit app."""
         st.title('Car Price Prediction App')
 
-        selected_brand, selected_model, selected_transmission, selected_km, selected_age = self.get_user_selections()
+        selected_brand, selected_model, selected_transmission, selected_fuel, selected_km, selected_age, selected_cv_min, selected_cv_max = self.get_user_selections()
 
         if selected_brand and selected_model:
             selected_car = self.results_df[
                 (self.results_df['brand'] == selected_brand) &
                 (self.results_df['model'] == selected_model) &
                 (self.results_df['is_automatic'].isin(selected_transmission)) &
+                (self.results_df['fuel'].isin(selected_fuel)) &
                 (self.results_df['km'].between(selected_km[0], selected_km[1])) &
-                (self.results_df['age_years'].between(selected_age[0], selected_age[1]))
+                (self.results_df['age_years'].between(selected_age[0], selected_age[1])) # &
+                # (self.results_df['cv'].between(selected_cv_min, selected_cv_max))
             ]
 
             self.plot_charts(selected_car, selected_brand, selected_model)
