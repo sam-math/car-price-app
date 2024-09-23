@@ -79,14 +79,14 @@ class CarPricePredictionApp:
 
                     selected_age = st.slider(label='Select age of car (years)',
                                             min_value=0,
-                                            max_value=25,
+                                            max_value=50,
                                             value=(0, 12),
                                             step=1)
                     
                     cv_options = self.results_df[(self.results_df['brand'] == selected_brand) 
                                                         & (self.results_df['model'] == selected_model)]['cv'].dropna().astype(int).sort_values().unique()
-                    
-                    if len(cv_options) >= 2:
+
+                    if cv_options.shape[0] >= 2:
                         left_col_cv, right_col_cv = st.columns(spec=[0.5, 0.5], gap='small')
                         with left_col_cv:
                             selected_cv_min = st.selectbox(label='Select Min Horsepower (CV)',
@@ -137,6 +137,7 @@ class CarPricePredictionApp:
 
 
     def plot_charts(self, selected_car, selected_brand, selected_model):
+        print(selected_car[['cv']])
         """Plot price vs mileage and price vs age in two columns."""
         left_col, right_col = st.columns(2)
 
@@ -215,8 +216,8 @@ class CarPricePredictionApp:
                 (self.results_df['is_automatic'].isin(selected_transmission)) &
                 (self.results_df['fuel'].isin(selected_fuel)) &
                 (self.results_df['km'].between(selected_km[0], selected_km[1])) &
-                (self.results_df['age_years'].between(selected_age[0], selected_age[1])) # &
-                # (self.results_df['cv'].between(selected_cv_min, selected_cv_max))
+                (self.results_df['age_years'].between(selected_age[0], selected_age[1])) &
+                ((self.results_df['cv'].fillna(0).between(selected_cv_min, selected_cv_max)) )
             ]
 
             self.plot_charts(selected_car, selected_brand, selected_model)
