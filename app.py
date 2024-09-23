@@ -71,18 +71,47 @@ class CarPricePredictionApp:
                                                     options=fuel_options,
                                                     default=fuel_options)                  
                     
-                    selected_km = st.slider(label='Select mileage (km)',
-                                            min_value=0,
-                                            max_value=500_000,
-                                            value=(0, 200_000),
-                                            step=25_000)
-
-                    selected_age = st.slider(label='Select age of car (years)',
-                                            min_value=0,
-                                            max_value=50,
-                                            value=(0, 12),
-                                            step=1)
                     
+
+                    max_km = self.results_df[(self.results_df['brand'] == selected_brand) 
+                                                        & (self.results_df['model'] == selected_model)]['km'].dropna().astype(int).max()
+
+                    left_col_km, right_col_km = st.columns(spec=[0.5, 0.5], gap='small')
+                    if max_km > 10_000:
+                        km_options = np.arange(0, (max_km + 10_000), 10_000)
+                        with left_col_km:
+                            selected_km_min = st.selectbox(label='Select Min Mileage (Km)',
+                                                    options=km_options,
+                                                    index= 0)
+                        with right_col_km:
+                            selected_km_max = st.selectbox(label='Select Max Age (Years Car)',
+                                                    options=km_options,
+                                                    index= (len(km_options)-1)) if len(km_options) > 0 else 0 #default_model_index,
+                                                    # placeholder='Select a model')
+
+
+
+                    max_age = self.results_df[(self.results_df['brand'] == selected_brand) 
+                                                        & (self.results_df['model'] == selected_model)]['age_years'].dropna().astype(int).max()
+                    
+                    if max_age > 0:
+                        age_options = np.arange(0, (max_age + 1), 1)
+                        left_col_age, right_col_age = st.columns(spec=[0.5, 0.5], gap='small')
+                        with left_col_age:
+                            selected_age_min = st.selectbox(label='Select Min Age (Years Car)',
+                                                    options=age_options,
+                                                    index= 0)
+                        with right_col_age:
+                            selected_age_max = st.selectbox(label='Select Max Age (Years Car)',
+                                                    options=age_options,
+                                                    index= (len(age_options)-1)) if len(age_options) > 0 else 0 #default_model_index,
+                                                    # placeholder='Select a model')
+                    else:
+                        selected_age_min = 0
+                        selected_age_max = 50
+
+
+
                     cv_options = self.results_df[(self.results_df['brand'] == selected_brand) 
                                                         & (self.results_df['model'] == selected_model)]['cv'].dropna().astype(int).sort_values().unique()
 
@@ -104,8 +133,10 @@ class CarPricePredictionApp:
                 else:
                     selected_transmission = None
                     selected_fuel = None
-                    selected_km = None
-                    selected_age = None
+                    selected_km_min = 0
+                    selected_km_max = 500_000
+                    selected_age_min = 0
+                    selected_age_max = 50
                     selected_cv_min = 0
                     selected_cv_max = 1000
 
@@ -133,7 +164,9 @@ class CarPricePredictionApp:
                         st.info('Car image not available')
                 
             
-        return selected_brand, selected_model, selected_transmission, selected_fuel, selected_km, selected_age, selected_cv_min, selected_cv_max
+        return selected_brand, selected_model, selected_transmission, \
+                selected_fuel, selected_km_min, selected_km_max, selected_age_min, \
+                selected_age_max, selected_cv_min, selected_cv_max
 
 
     def plot_charts(self, selected_car, selected_brand, selected_model):
@@ -207,7 +240,9 @@ class CarPricePredictionApp:
         """Main entry point to run the Streamlit app."""
         st.title('Car Price Prediction App')
 
-        selected_brand, selected_model, selected_transmission, selected_fuel, selected_km, selected_age, selected_cv_min, selected_cv_max = self.get_user_selections()
+        selected_brand, selected_model, selected_transmission, \
+                selected_fuel, selected_km_min, selected_km_max, selected_age_min, \
+                selected_age_max, selected_cv_min, selected_cv_max = self.get_user_selections()
 
         if selected_brand and selected_model:
             selected_car = self.results_df[
@@ -215,9 +250,9 @@ class CarPricePredictionApp:
                 (self.results_df['model'] == selected_model) &
                 (self.results_df['is_automatic'].isin(selected_transmission)) &
                 (self.results_df['fuel'].isin(selected_fuel)) &
-                (self.results_df['km'].between(selected_km[0], selected_km[1])) &
-                (self.results_df['age_years'].between(selected_age[0], selected_age[1])) &
-                ((self.results_df['cv'].fillna(0).between(selected_cv_min, selected_cv_max)) )
+                (self.results_df['km'].between(selected_km_min, selected_km_max)) &
+                (self.results_df['age_years'].between(selected_age_min, selected_age_max)) &
+                ((self.results_df['cv'].fillna(selected_cv_min).between(selected_cv_min, selected_cv_max)) )
             ]
 
             self.plot_charts(selected_car, selected_brand, selected_model)
