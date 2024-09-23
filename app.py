@@ -80,11 +80,11 @@ class CarPricePredictionApp:
                     if max_km > 10_000:
                         km_options = np.arange(0, (max_km + 10_000), 10_000)
                         with left_col_km:
-                            selected_km_min = st.selectbox(label='Select Min Mileage (Km)',
+                            selected_km_min = st.selectbox(label='Min Km',
                                                     options=km_options,
                                                     index= 0)
                         with right_col_km:
-                            selected_km_max = st.selectbox(label='Select Max Age (Years Car)',
+                            selected_km_max = st.selectbox(label='Max Km',
                                                     options=km_options,
                                                     index= (len(km_options)-1)) if len(km_options) > 0 else 0 #default_model_index,
                                                     # placeholder='Select a model')
@@ -98,11 +98,11 @@ class CarPricePredictionApp:
                         age_options = np.arange(0, (max_age + 1), 1)
                         left_col_age, right_col_age = st.columns(spec=[0.5, 0.5], gap='small')
                         with left_col_age:
-                            selected_age_min = st.selectbox(label='Select Min Age (Years Car)',
+                            selected_age_min = st.selectbox(label='Min Years',
                                                     options=age_options,
                                                     index= 0)
                         with right_col_age:
-                            selected_age_max = st.selectbox(label='Select Max Age (Years Car)',
+                            selected_age_max = st.selectbox(label='Max Years',
                                                     options=age_options,
                                                     index= (len(age_options)-1)) if len(age_options) > 0 else 0 #default_model_index,
                                                     # placeholder='Select a model')
