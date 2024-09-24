@@ -7,6 +7,7 @@ import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from app.app_utils.filter_utils import filter_dataframe 
+import joblib
 
 
 # CONFIG OPTIONS:
@@ -27,126 +28,101 @@ class CarPricePredictionApp:
                             'HONDA', 'HYUNDAI', 'JEEP', 'KIA', 'LAND-ROVER', 'LEXUS', 'MAZDA', 'MERCEDES-BENZ',
                             'MG', 'MINI', 'MITSUBISHI', 'NISSAN', 'OPEL', 'PEUGEOT', 'RENAULT', 'ROVER', 'SEAT',
                             'SKODA', 'SUZUKI', 'TESLA', 'TOYOTA', 'VOLKSWAGEN', 'VOLVO']
+        # User selections will be stored as instance variables
+        self.selected_brand = None
+        self.selected_model = None
+        self.selected_transmission = None
+        self.fuel_options = None
+        self.selected_fuel = None
+        self.selected_km_min = None
+        self.selected_km_max = None
+        self.selected_age_min = None
+        self.selected_age_max = None
+        self.cv_options = None
+        self.selected_cv_min = None
+        self.selected_cv_max = None
 
     def get_user_selections(self):
-        """Get user selections from the sidebar."""
+        """Get user selections from the sidebar and store them as attributes."""
         with st.expander(label='Car selection:', expanded=True):
             left_col, middle_col, right_col = st.columns(spec=[0.35, 0.40, 0.25], gap='large')
 
             with left_col:
                 brands_choice = st.radio('Car Brands List:', ['Common Car Brands', 'All Car Brands'], horizontal=True)
 
-                # default_brand = 'peugeot'
                 brands_list = self.performance_df['brand'].str.upper().unique().tolist()
-                # default_brand_index = brands_list.index(default_brand)
-                selected_brand = st.selectbox(label= f"{brands_choice}:",
-                                            options=self.common_brands if brands_choice == 'Common Car Brands' else brands_list,
-                                            index= None, # default_brand_index,
-                                            placeholder="Select a car brand")
-                if selected_brand:
-                    selected_brand = selected_brand.lower()
-                
-                
-                brand_models_list = self.performance_df[self.performance_df['brand'] == selected_brand]['model'].unique().tolist()
-                # default_model = '3008' if selected_brand == default_brand else None
-                # default_model_index = brand_models_list.index(default_model) if default_model else 0
-                selected_model = st.selectbox(label='Select model',
-                                            options=brand_models_list,
-                                            index= None, #default_model_index,
-                                            placeholder='Select a model')
-                
-                if selected_model:
-                    selected_transmission = st.multiselect(label='Select Transmission(s)',
-                                                        options=['manual', 'automatic'],
-                                                        default=['manual', 'automatic'])
+                self.selected_brand = st.selectbox(
+                    label=f"{brands_choice}:",
+                    index=None,
+                    options=self.common_brands if brands_choice == 'Common Car Brands' else brands_list,
+                    placeholder="Select a car brand"
+                )
+                if self.selected_brand:
+                    self.selected_brand = self.selected_brand.lower()
 
-                    selected_transmission = [0, 1] if len(selected_transmission) == 2 else ([1] if 'automatic' in selected_transmission else [0])
-       
+                brand_models_list = self.performance_df[self.performance_df['brand'] == self.selected_brand]['model'].unique().tolist()
+                self.selected_model = st.selectbox(
+                    label='Select model',
+                    index=None,
+                    options=brand_models_list,
+                    placeholder='Select a model'
+                )
+
+                if self.selected_model:
+                    self.selected_transmission = st.multiselect(
+                        label='Select Transmission(s)',
+                        options=['manual', 'automatic'],
+                        default=['manual', 'automatic']
+                    )
+                    self.selected_transmission = [0, 1] if len(self.selected_transmission) == 2 else (
+                        [1] if 'automatic' in self.selected_transmission else [0])
+
             with middle_col:
-                if selected_model:
-                    fuel_options = self.results_df[(self.results_df['brand'] == selected_brand) 
-                                                        & (self.results_df['model'] == selected_model)]['fuel'].unique()
+                if self.selected_model:
+                    self.fuel_options = self.results_df[(self.results_df['brand'] == self.selected_brand)
+                                                   & (self.results_df['model'] == self.selected_model)]['fuel'].unique()
+                    self.selected_fuel = st.multiselect(label="Select fuel type", options=self.fuel_options, default=self.fuel_options)
 
-                    selected_fuel = st.multiselect(label="Select fuel type",
-                                                    options=fuel_options,
-                                                    default=fuel_options)                  
-                    
-                    
-
-                    max_km = self.results_df[(self.results_df['brand'] == selected_brand) 
-                                                        & (self.results_df['model'] == selected_model)]['km'].dropna().astype(int).max()
-
-                    left_col_km, right_col_km = st.columns(spec=[0.5, 0.5], gap='small')
+                    max_km = self.results_df[(self.results_df['brand'] == self.selected_brand)
+                                             & (self.results_df['model'] == self.selected_model)]['km'].dropna().astype(int).max()
                     if max_km > 10_000:
                         km_options = np.arange(0, (max_km + 10_000), 10_000)
+                        left_col_km, right_col_km = st.columns(spec=[0.5, 0.5], gap='small')
                         with left_col_km:
-                            selected_km_min = st.selectbox(label='Min Km',
-                                                    options=km_options,
-                                                    index= 0)
+                            self.selected_km_min = st.selectbox(label='Min Km', options=km_options, index=0)
                         with right_col_km:
-                            selected_km_max = st.selectbox(label='Max Km',
-                                                    options=km_options,
-                                                    index= (len(km_options)-1)) if len(km_options) > 0 else 0 #default_model_index,
-                                                    # placeholder='Select a model')
+                            self.selected_km_max = st.selectbox(label='Max Km', options=km_options, index=(len(km_options) - 1))
 
-
-
-                    max_age = self.results_df[(self.results_df['brand'] == selected_brand) 
-                                                        & (self.results_df['model'] == selected_model)]['age_years'].dropna().astype(int).max()
-                    
+                    max_age = self.results_df[(self.results_df['brand'] == self.selected_brand)
+                                              & (self.results_df['model'] == self.selected_model)]['age_years'].dropna().astype(int).max()
                     if max_age > 0:
                         age_options = np.arange(0, (max_age + 1), 1)
                         left_col_age, right_col_age = st.columns(spec=[0.5, 0.5], gap='small')
                         with left_col_age:
-                            selected_age_min = st.selectbox(label='Min Years',
-                                                    options=age_options,
-                                                    index= 0)
+                            self.selected_age_min = st.selectbox(label='Min Years', options=age_options, index=0)
                         with right_col_age:
-                            selected_age_max = st.selectbox(label='Max Years',
-                                                    options=age_options,
-                                                    index= (len(age_options)-1)) if len(age_options) > 0 else 0 #default_model_index,
-                                                    # placeholder='Select a model')
+                            self.selected_age_max = st.selectbox(label='Max Years', options=age_options, index=(len(age_options) - 1))
                     else:
-                        selected_age_min = 0
-                        selected_age_max = 50
+                        self.selected_age_min, self.selected_age_max = 0, 50
 
-
-
-                    cv_options = self.results_df[(self.results_df['brand'] == selected_brand) 
-                                                        & (self.results_df['model'] == selected_model)]['cv'].dropna().astype(int).sort_values().unique()
-
-                    if cv_options.shape[0] >= 2:
+                    self.cv_options = self.results_df[(self.results_df['brand'] == self.selected_brand)
+                                                 & (self.results_df['model'] == self.selected_model)]['cv'].dropna().astype(int).sort_values().unique()
+                    if self.cv_options.shape[0] >= 2:
                         left_col_cv, right_col_cv = st.columns(spec=[0.5, 0.5], gap='small')
                         with left_col_cv:
-                            selected_cv_min = st.selectbox(label='Select Min Horsepower (CV)',
-                                                    options=cv_options,
-                                                    index= 0)
+                            self.selected_cv_min = st.selectbox(label='Select Min Horsepower (CV)', options=self.cv_options, index=0)
                         with right_col_cv:
-                            selected_cv_max = st.selectbox(label='Select Max Horsepower (CV)',
-                                                    options=cv_options,
-                                                    index= (len(cv_options)-1)) if len(cv_options) > 0 else 0 #default_model_index,
-                                                    # placeholder='Select a model')
+                            self.selected_cv_max = st.selectbox(label='Select Max Horsepower (CV)', options=self.cv_options, index=(len(self.cv_options) - 1))
                     else:
-                        selected_cv_min = 0
-                        selected_cv_max = 1000
-                    
-                else:
-                    selected_transmission = None
-                    selected_fuel = None
-                    selected_km_min = 0
-                    selected_km_max = 500_000
-                    selected_age_min = 0
-                    selected_age_max = 50
-                    selected_cv_min = 0
-                    selected_cv_max = 1000
-
+                        self.selected_cv_min, self.selected_cv_max = 0, 1000
+            
             with right_col:
-                if selected_model:
+                if self.selected_model:
                     # Display car picture
                     car_pictures_brand_model = self.car_pictures_df[
                         (self.car_pictures_df['author'] != 'Unknown') &
-                        (self.car_pictures_df['brand'] == selected_brand) &
-                        (self.car_pictures_df['model'] == selected_model)
+                        (self.car_pictures_df['brand'] == self.selected_brand) &
+                        (self.car_pictures_df['model'] == self.selected_model)
                     ].reset_index(drop=True)
 
                     if not car_pictures_brand_model.empty:
@@ -162,11 +138,53 @@ class CarPricePredictionApp:
                         st.info(image_attribution, icon=":material/attribution:")
                     else:
                         st.info('Car image not available')
+
+    def filter_car_data(self):
+        """Filter car data based on the user selections."""
+        return self.results_df[
+            (self.results_df['brand'] == self.selected_brand) &
+            (self.results_df['model'] == self.selected_model) &
+            (self.results_df['is_automatic'].isin(self.selected_transmission)) &
+            (self.results_df['fuel'].isin(self.selected_fuel)) &
+            (self.results_df['km'].between(self.selected_km_min, self.selected_km_max)) &
+            (self.results_df['age_years'].between(self.selected_age_min, self.selected_age_max)) &
+            (self.results_df['cv'].fillna(self.selected_cv_min).between(self.selected_cv_min, self.selected_cv_max))
+        ]
+    
+    def predict_price(self):
+        if self.selected_model:
+            with st.expander("Price Prediction"):
+                user_km = st.number_input('Select Km', value=0, step=5000)
+                user_age_car = st.number_input('Select Age of Car', value=0)
+                user_automatic = st.checkbox('Is Automatic')
+                user_fuel = st.selectbox("Select Fuel", options= self.fuel_options)
+                user_cv = st.selectbox("Select Horsepower", options=self.cv_options)
+
                 
-            
-        return selected_brand, selected_model, selected_transmission, \
-                selected_fuel, selected_km_min, selected_km_max, selected_age_min, \
-                selected_age_max, selected_cv_min, selected_cv_max
+                user_input = {
+                    'km': user_km,  # e.g., 50000
+                    'age_years': user_age_car,  # e.g., 3
+                    'gear': user_automatic,  # 1 if automatic, 0 if manual
+                    'fuel_type': user_fuel,  # e.g., 'Diesel'
+                    'cv': user_cv  # e.g., '150'
+                }
+
+                # Load the model and feature names
+                model_info = joblib.load(f'05_model/saved_models/{self.selected_brand}_{self.selected_model}.pkl')
+
+                model = model_info['model']
+                feature_names = model_info['feature_names']
+
+                # Prepare user input for prediction (reindex with feature_names)
+                user_df = pd.DataFrame([user_input])
+                user_df = pd.get_dummies(user_df, columns=['fuel_type', 'cv'])
+                user_df = user_df.reindex(columns=feature_names, fill_value=0)
+
+                # Make prediction
+                prediction = model.predict(user_df)[0]
+                st.write(f"Predicted price: {int(prediction)}")
+
+
 
 
     def plot_charts(self, selected_car, selected_brand, selected_model):
@@ -237,31 +255,21 @@ class CarPricePredictionApp:
                 st.warning("No data available for this brand-model combination.")
 
     def run_app(self):
-        """Main entry point to run the Streamlit app."""
-        st.title('Car Price Prediction App')
+            """Main entry point to run the Streamlit app."""
+            st.title('Car Price Prediction App')
 
-        selected_brand, selected_model, selected_transmission, \
-                selected_fuel, selected_km_min, selected_km_max, selected_age_min, \
-                selected_age_max, selected_cv_min, selected_cv_max = self.get_user_selections()
+            self.get_user_selections()
 
-        if selected_brand and selected_model:
-            selected_car = self.results_df[
-                (self.results_df['brand'] == selected_brand) &
-                (self.results_df['model'] == selected_model) &
-                (self.results_df['is_automatic'].isin(selected_transmission)) &
-                (self.results_df['fuel'].isin(selected_fuel)) &
-                (self.results_df['km'].between(selected_km_min, selected_km_max)) &
-                (self.results_df['age_years'].between(selected_age_min, selected_age_max)) &
-                ((self.results_df['cv'].fillna(selected_cv_min).between(selected_cv_min, selected_cv_max)) )
-            ]
+            if self.selected_brand and self.selected_model:
+                selected_car = self.filter_car_data()
+                self.plot_charts(selected_car, self.selected_brand, self.selected_model)
 
-            self.plot_charts(selected_car, selected_brand, selected_model)
+                self.predict_price()
 
-            # st.write("Prediction Results (with all columns):")
-            with st.expander(label=f'Our predictions for {selected_brand} {selected_model} are based on this data:', expanded=False):
-                edited_df = st.dataframe(filter_dataframe(selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
-                                                       'cv','fuel', 'title']]),
-                                        hide_index=True)
+                with st.expander(label=f'Our predictions for {self.selected_brand} {self.selected_model} are based on this data:', expanded=False):
+                    edited_df = st.dataframe(filter_dataframe(selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
+                                                        'cv','fuel', 'title']]),
+                                            hide_index=True)
 
 # MAIN APP:
 #####################################################################################################
