@@ -40,8 +40,8 @@ audi,80,2676.33,179.98
 audi,90,2680.951323690902,0.7431985294117647
 audi,a1,1740.55,6.99
 audi,a2,1139.57,49.45
-audi,a3,3386.85,22.69
-audi,a4,2889.63,27.07
+audi,a3,3391.23,22.78
+audi,a4,2892.79,26.95
 audi,a4 allroad,4350.0,2.9476973684210526
 audi,a4 allroad quattro,2908.51,12.44
 audi,a5,4848.73,24.06
@@ -109,11 +109,11 @@ bmw,ix,12732.27,10.65
 bmw,ix1,2482.2,3.68
 bmw,ix2,4494.58,7.7
 bmw,ix3,10171.73,39.34
-bmw,serie 1,3309.08,20.12
+bmw,serie 1,3319.34,20.12
 bmw,serie 2,10758.4,18.87
 bmw,serie 2 active tourer,2577.26,12.13
 bmw,serie 2 gran tourer,2282.08,9.6
-bmw,serie 3,4804.27,39.95
+bmw,serie 3,4810.44,39.97
 bmw,serie 4,13773.43,21.11
 bmw,serie 5,5136.61,34.21
 bmw,serie 6,6453.83,27.32
@@ -351,7 +351,7 @@ ford,edge,5987.13,17.66
 ford,escort,3406.18,83.63
 ford,explorer,35841.49,760.72
 ford,fiesta,1796.91,21.94
-ford,focus,2612.53,23.79
+ford,focus,2617.28,23.75
 ford,focus c-max,1151.46,30.68
 ford,fusion,1265.56,43.83
 ford,galaxy,1973.25,26.02
@@ -633,9 +633,9 @@ mercedes-benz,600,4250.0,1.0431818181818182
 mercedes-benz,amg gt,62321.99,484.09
 mercedes-benz,citan,2538.78,12.55
 mercedes-benz,cla,9188.25,15.24
-mercedes-benz,clase a,5268.34,13.58
+mercedes-benz,clase a,5256.55,13.59
 mercedes-benz,clase b,2352.36,10.68
-mercedes-benz,clase c,6400.23,22.77
+mercedes-benz,clase c,6398.5,22.72
 mercedes-benz,clase cl,6398.82,39.49
 mercedes-benz,clase cla,4493.93,11.81
 mercedes-benz,clase clc,1900.31,31.1
@@ -700,7 +700,7 @@ mg,zt,1622.4980739587952,2.506730769230769
 mini,clubman,2593.58,11.0
 mini,cooper,4605.75,31.18
 mini,countryman,3765.65,10.73
-mini,mini,3483.12,20.71
+mini,mini,3474.6,20.65
 mini,paceman,3982.52,18.73
 mitsubishi,3000 gt,706.16,3.86
 mitsubishi,asx,1538.38,7.51
@@ -834,7 +834,7 @@ peugeot,3008 plug-in hybrid,15410.218741687824,5.732185550316712
 peugeot,306,1098.67,51.94
 peugeot,307,1076.22,44.36
 peugeot,307 sw,1113.63,52.06
-peugeot,308,1983.08,21.93
+peugeot,308,1976.2,21.78
 peugeot,309,5650.0,2.5801666666666665
 peugeot,4007,2617.61,60.59
 peugeot,4008,5200.35,432.18
@@ -891,7 +891,7 @@ renault,arkana,1507.07,4.06
 renault,austral,2906.71,5.85
 renault,avantime,1995.5,0.37437471852318527
 renault,captur,1780.7,8.05
-renault,clio,2008.5,22.73
+renault,clio,2010.38,22.89
 renault,clio campus,1299.54,65.06
 renault,clio iii,2408.56,106.13
 renault,espace,3393.83,16.18
@@ -913,7 +913,7 @@ renault,mascott,8027.23,67.75
 renault,master,9089.36,59.79
 renault,master propulsion,9150.0,0.8658358208955224
 renault,maxity,0.0,0.0
-renault,megane,2485.26,27.59
+renault,megane,2456.91,27.52
 renault,megane e-tech,4217.63,11.47
 renault,modus,1613.19,39.12
 renault,r11,1633.79,54.44
@@ -971,9 +971,9 @@ seat,arosa,885.26,74.55
 seat,ateca,1859.1,5.81
 seat,cordoba,821.08,36.41
 seat,exeo,1971.56,19.28
-seat,ibiza,1459.05,28.16
+seat,ibiza,1459.55,28.09
 seat,inca,456.53,27.19
-seat,leon,2272.49,23.14
+seat,leon,2277.44,23.2
 seat,malaga,1423.16,30.3
 seat,marbella,1314.83,66.91
 seat,mii,2819.12,22.01
@@ -1134,7 +1134,7 @@ volkswagen,crafter,9825.04,210.61
 volkswagen,e-up!,2711.36,19.48
 volkswagen,eos,2575.05,19.51
 volkswagen,fox,394.09,8.86
-volkswagen,golf,2953.25,26.73
+volkswagen,golf,2956.98,26.74
 volkswagen,golf plus,1272.66,15.89
 volkswagen,golf sportsvan,1581.48,8.63
 volkswagen,grand california,7026.540756303915,0.06292158983148302
@@ -1151,7 +1151,7 @@ volkswagen,new beetle,1857.65,31.12
 volkswagen,passat,1799.96,21.0
 volkswagen,passat cc,2504.82,87.06
 volkswagen,phaeton,3095.94,52.57
-volkswagen,polo,1436.78,15.83
+volkswagen,polo,1425.23,15.76
 volkswagen,santana,0.0,0.0
 volkswagen,scirocco,3863.73,16.32
 volkswagen,sharan,2736.86,19.08
