@@ -89,9 +89,9 @@ class CarPricePredictionApp:
                         km_options = np.arange(0, (max_km + 10_000), 10_000)
                         left_col_km, right_col_km = st.columns(spec=[0.5, 0.5], gap='small')
                         with left_col_km:
-                            self.selected_km_min = st.selectbox(label='Min Km', options=km_options, index=0)
+                            self.selected_km_min = st.selectbox(label='Min Km', options=km_options, index=0, format_func=lambda x: f"{x:,}")
                         with right_col_km:
-                            self.selected_km_max = st.selectbox(label='Max Km', options=km_options, index=(len(km_options) - 1))
+                            self.selected_km_max = st.selectbox(label='Max Km', options=km_options, index=(len(km_options) - 1), format_func=lambda x: f"{x:,}")
 
                     max_age = self.results_df[(self.results_df['brand'] == self.selected_brand)
                                               & (self.results_df['model'] == self.selected_model)]['age_years'].dropna().astype(int).max()
@@ -154,11 +154,19 @@ class CarPricePredictionApp:
     def predict_price(self):
         if self.selected_model:
             with st.expander("Price Prediction"):
-                user_km = st.number_input('Select Km', value=0, step=5000)
-                user_age_car = st.number_input('Select Age of Car', value=0)
-                user_automatic = st.checkbox('Is Automatic')
-                user_fuel = st.selectbox("Select Fuel", options= self.fuel_options)
-                user_cv = st.selectbox("Select Horsepower", options=self.cv_options)
+                
+                col_1, col_2, col_3, col_4, col_5 = st.columns([0.23, 0.23, 0.23, 0.23, 0.08])
+                with col_1:
+                    user_km = st.number_input('Km:', value=0, step=5000)
+                with col_2:
+                    user_age_car = st.number_input('Car Age:', value=0)
+                with col_3:
+                    user_fuel = st.selectbox("Fuel:", options= self.fuel_options)
+                with col_4:
+                    user_cv = st.selectbox("Horsepower (CV):", options=self.cv_options)
+                with col_5:
+                    st.text('')
+                    user_automatic = st.checkbox('Is Automatic')
 
                 
                 user_input = {
@@ -182,16 +190,13 @@ class CarPricePredictionApp:
 
                 # Make prediction
                 prediction = model.predict(user_df)[0]
-                st.write(f"Predicted price: {int(prediction)}")
+                st.success(f"**Predicted price: {int(prediction):,}€**")
 
 
 
 
     def plot_charts(self, selected_car, selected_brand, selected_model):
-        print(selected_car[['cv']])
-        """Plot price vs mileage and price vs age in two columns."""
         left_col, right_col = st.columns(2)
-
         with left_col:
             X = selected_car[['km']]
             y = selected_car['price']
