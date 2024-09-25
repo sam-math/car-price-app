@@ -41,6 +41,7 @@ class CarPricePredictionApp:
         self.cv_options = None
         self.selected_cv_min = None
         self.selected_cv_max = None
+        self.selected_car = None
 
     def get_user_selections(self):
         """Get user selections from the sidebar and store them as attributes."""
@@ -48,13 +49,13 @@ class CarPricePredictionApp:
             left_col, middle_col, right_col = st.columns(spec=[0.35, 0.40, 0.25], gap='large')
 
             with left_col:
-                brands_choice = st.radio('Car Brands List:', ['Common Car Brands', 'All Car Brands'], horizontal=True)
+                brands_choice = st.radio('Car Brands List:', ['Popular Car Brands', 'All Car Brands'], horizontal=True)
 
                 brands_list = self.performance_df['brand'].str.upper().unique().tolist()
                 self.selected_brand = st.selectbox(
                     label=f"{brands_choice}:",
                     index=None,
-                    options=self.common_brands if brands_choice == 'Common Car Brands' else brands_list,
+                    options=self.common_brands if brands_choice == 'Popular Car Brands' else brands_list,
                     placeholder="Select a car brand"
                 )
                 if self.selected_brand:
@@ -191,6 +192,8 @@ class CarPricePredictionApp:
                 # Make prediction
                 prediction = model.predict(user_df)[0]
                 st.success(f"**Predicted price: {int(prediction):,}€**")
+                # st.write(self.selected_car) JUST FOR TESTING PURPOSES.
+                
 
 
 
@@ -266,13 +269,13 @@ class CarPricePredictionApp:
             self.get_user_selections()
 
             if self.selected_brand and self.selected_model:
-                selected_car = self.filter_car_data()
-                self.plot_charts(selected_car, self.selected_brand, self.selected_model)
+                self.selected_car = self.filter_car_data()
+                self.plot_charts(self.selected_car, self.selected_brand, self.selected_model)
 
                 self.predict_price()
 
                 with st.expander(label=f'Our predictions for {self.selected_brand} {self.selected_model} are based on this data:', expanded=False):
-                    edited_df = st.dataframe(filter_dataframe(selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
+                    edited_df = st.dataframe(filter_dataframe(self.selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
                                                         'cv','fuel', 'title']]),
                                             hide_index=True)
 
