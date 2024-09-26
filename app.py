@@ -209,7 +209,7 @@ class CarPricePredictionApp:
                 
                 col_1, col_2, col_3, col_4, col_5 = st.columns([0.23, 0.23, 0.23, 0.23, 0.08])
                 with col_1:
-                    user_km = st.number_input('Km:', value=round(self.selected_car['km'].median().astype(int),-3), step=5000)
+                    user_km = st.number_input('Km:', value=round(self.selected_car['km'].median().astype(int),-4), step=5000)
                 with col_2:
                     user_age_car = st.number_input('Car Age:', value=self.selected_car['age_years'].median().astype(int))
                 with col_3:
