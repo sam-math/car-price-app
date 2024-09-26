@@ -158,23 +158,25 @@ class CarPricePredictionApp:
                 
                 col_1, col_2, col_3, col_4, col_5 = st.columns([0.23, 0.23, 0.23, 0.23, 0.08])
                 with col_1:
-                    user_km = st.number_input('Km:', value=0, step=5000)
+                    user_km = st.number_input('Km:', value=round(self.selected_car['km'].median().astype(int),-3), step=5000)
                 with col_2:
-                    user_age_car = st.number_input('Car Age:', value=0)
+                    user_age_car = st.number_input('Car Age:', value=self.selected_car['age_years'].median().astype(int))
                 with col_3:
-                    user_fuel = st.selectbox("Fuel:", options= self.fuel_options)
+                    idx_fuel = self.fuel_options.tolist().index(self.selected_car['fuel'].mode().values[0])
+                    user_fuel = st.selectbox("Fuel:", options= self.fuel_options, index=idx_fuel)
                 with col_4:
-                    user_cv = st.selectbox("Horsepower (CV):", options=self.cv_options)
+                    idx_cv = self.cv_options.tolist().index(self.selected_car['cv'].mode().values[0])
+                    user_cv = st.selectbox("Horsepower (CV):", options=self.cv_options, index=idx_cv)
                 with col_5:
                     st.text('')
-                    user_automatic = st.checkbox('Is Automatic')
+                    user_automatic = st.checkbox('Is Automatic', value=self.selected_car['is_automatic'].mode().values[0])
 
                 
                 user_input = {
                     'km': user_km,  # e.g., 50000
                     'age_years': user_age_car,  # e.g., 3
-                    'gear': user_automatic,  # 1 if automatic, 0 if manual
-                    'fuel_type': user_fuel,  # e.g., 'Diesel'
+                    'is_automatic': user_automatic,  # 1 if automatic, 0 if manual
+                    'fuel': user_fuel,  # e.g., 'Diesel'
                     'cv': user_cv  # e.g., '150'
                 }
 
@@ -186,13 +188,13 @@ class CarPricePredictionApp:
 
                 # Prepare user input for prediction (reindex with feature_names)
                 user_df = pd.DataFrame([user_input])
-                user_df = pd.get_dummies(user_df, columns=['fuel_type', 'cv'])
+                user_df = pd.get_dummies(user_df, columns=['fuel', 'cv'])
                 user_df = user_df.reindex(columns=feature_names, fill_value=0)
 
                 # Make prediction
                 prediction = model.predict(user_df)[0]
                 st.success(f"**Predicted price: {int(prediction):,}€**")
-                # st.write(self.selected_car) JUST FOR TESTING PURPOSES.
+                
                 
 
 
