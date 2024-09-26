@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
@@ -42,6 +43,14 @@ class CarPricePredictionApp:
         self.selected_cv_min = None
         self.selected_cv_max = None
         self.selected_car = None
+        self.price_prediction = None
+        self.selected_car_metrics = None
+        self.low_margin_value = None
+        self.low_bound_value = None
+        self.mid_low_bound_value = None
+        self.mid_high_bound_value = None
+        self.high_bound_value = None
+        self.high_margin_value = None
 
     def get_user_selections(self):
         """Get user selections from the sidebar and store them as attributes."""
@@ -152,9 +161,51 @@ class CarPricePredictionApp:
             (self.results_df['cv'].fillna(self.selected_cv_min).between(self.selected_cv_min, self.selected_cv_max))
         ]
     
+    def plot_price_range(self):
+        # Define price categories, ranges, and corresponding colors
+        categories = ['Súper oferta', 'Buen precio', 'Precio justo', 'Desconocido', 'Desconocido']
+        price_ranges = [(self.low_margin_value, self.low_bound_value),
+                        (self.low_bound_value, self.mid_low_bound_value),
+                        (self.mid_low_bound_value, self.mid_high_bound_value),
+                        (self.mid_high_bound_value, self.high_bound_value),
+                        (self.high_bound_value, self.high_margin_value)]
+        colors = ['#368A65', '#40B36A', '#BCD980', '#FAFFA1', '#F4CD96']  # Colors for the stacked bars
+        self.predict_price = 16818  # Example current price
+
+        # Create a horizontal stacked bar chart
+        fig, ax = plt.subplots(figsize=(20, 1), dpi=300)
+
+        # Start stacking the bars
+        left_position = 0
+        for i, (category, price_range) in enumerate(zip(categories, price_ranges)):
+            # Calculate the width of the current category
+            width = price_range[1] - price_range[0]
+            ax.barh([0], width, left=left_position, color=colors[i], edgecolor='white', height=0.4, label=category)
+            left_position += width
+
+        # Add the price ranges as text on top of the bars
+        left_position = 0
+        for i, price_range in enumerate(price_ranges):
+            mid_position = left_position + (price_range[1] - price_range[0]) / 2
+            ax.text(mid_position, 0, f"€ {price_range[0]:,} - € {price_range[1]:,}", ha='center', va='center', fontsize=12, color='black')
+            left_position += price_range[1] - price_range[0]
+
+        # # Mark the current price with a red vertical line and label
+        # ax.axvline(self.price_prediction, color='red', linestyle='--', lw=2)
+        # ax.text(self.price_prediction, 0.1, f"€ {self.price_prediction:,}", color='red', fontsize=12, ha='center')
+
+        # Hide y-axis and other unnecessary details
+        ax.get_yaxis().set_visible(False)
+        ax.get_xaxis().set_visible(False)
+        plt.box(False)
+
+        # Display the plot in Streamlit
+        # st.title("Horizontal Stacked Price Evaluation")
+        st.pyplot(fig)
+
     def predict_price(self):
         if self.selected_model:
-            with st.expander("Price Prediction"):
+            with st.expander("Price Prediction", expanded=True):
                 
                 col_1, col_2, col_3, col_4, col_5 = st.columns([0.23, 0.23, 0.23, 0.23, 0.08])
                 with col_1:
@@ -165,8 +216,11 @@ class CarPricePredictionApp:
                     idx_fuel = self.fuel_options.tolist().index(self.selected_car['fuel'].mode().values[0])
                     user_fuel = st.selectbox("Fuel:", options= self.fuel_options, index=idx_fuel)
                 with col_4:
-                    idx_cv = self.cv_options.tolist().index(self.selected_car['cv'].mode().values[0])
-                    user_cv = st.selectbox("Horsepower (CV):", options=self.cv_options, index=idx_cv)
+                    try:
+                        idx_cv = self.cv_options.tolist().index(self.selected_car['cv'].mode().values[0])
+                        user_cv = st.selectbox("Horsepower (CV):", options=self.cv_options, index=idx_cv)
+                    except:
+                        user_cv = None
                 with col_5:
                     st.text('')
                     user_automatic = st.checkbox('Is Automatic', value=self.selected_car['is_automatic'].mode().values[0])
@@ -192,8 +246,25 @@ class CarPricePredictionApp:
                 user_df = user_df.reindex(columns=feature_names, fill_value=0)
 
                 # Make prediction
-                prediction = model.predict(user_df)[0]
-                st.success(f"**Predicted price: {int(prediction):,}€**")
+                self.price_prediction = model.predict(user_df)[0]
+                _, mid, _ = st.columns([0.35, 0.15, 0.40])
+                with mid:
+                    st.success(f"**Predicted price: {int(self.price_prediction):,}€**")
+                self.selected_car_metrics = (self.performance_df[(self.performance_df['brand'] == self.selected_brand)
+                                             &
+                                             (self.performance_df['model'] == self.selected_model)])
+                # st.write(self.selected_car_metrics)
+                wide_bound = (self.selected_car_metrics['iqr_10_90']/2).values[0]
+                mid_bound = (self.selected_car_metrics['iqr_25_75']/2).values[0]
+
+                self.low_margin_value = round((self.price_prediction - max(wide_bound, 3000)).astype(int),-2)
+                self.low_bound_value = round((self.price_prediction - max(wide_bound, 1500)).astype(int),-2)
+                self.mid_low_bound_value = round((self.price_prediction - max(mid_bound, 500)).astype(int),-2)
+                self.mid_high_bound_value = round((self.price_prediction + max(mid_bound, 500)).astype(int),-2)
+                self.high_bound_value = round((self.price_prediction + max(wide_bound, 1500)).astype(int),-2)
+                self.high_margin_value = round((self.price_prediction + max(wide_bound, 3000)).astype(int),-2)
+                
+                self.plot_price_range()
                 
                 
 
@@ -280,6 +351,7 @@ class CarPricePredictionApp:
                     edited_df = st.dataframe(filter_dataframe(self.selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
                                                         'cv','fuel', 'title']]),
                                             hide_index=True)
+                    
 
 # MAIN APP:
 #####################################################################################################
@@ -291,6 +363,8 @@ if __name__ == "__main__":
         pictures_data_path='app/app_files/car_pictures_table_all.csv'
     )
     app.run_app()
+
+    
 
 
 
