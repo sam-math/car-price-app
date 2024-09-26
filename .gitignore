@@ -6,6 +6,7 @@
 04_EDA/*
 05_model/*
 **/archive_files
+!*saved_models/
 !*.ipynb
 !*.py
 **/*config.py
