@@ -203,7 +203,7 @@ class CarPricePredictionApp:
         # st.title("Horizontal Stacked Price Evaluation")
         st.pyplot(fig)
 
-    def predict_price(self):
+    def predict_price(self):        
         if self.selected_model:
             with st.expander("Price Prediction", expanded=True):
                 
@@ -235,8 +235,10 @@ class CarPricePredictionApp:
                 }
 
                 # Load the model and feature names
-                model_info = joblib.load(f'05_model/saved_models/{self.selected_brand}_{self.selected_model}.pkl')
-
+                try:
+                    model_info = joblib.load(f'05_model/saved_models/{self.selected_brand}_{self.selected_model}.pkl')
+                except Exception as e:
+                    st.error(f"Error type: {e}")
                 model = model_info['model']
                 feature_names = model_info['feature_names']
 
