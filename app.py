@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
@@ -163,110 +164,115 @@ class CarPricePredictionApp:
     
     def plot_price_range(self):
         # Define price categories, ranges, and corresponding colors
-        categories = ['Súper oferta', 'Buen precio', 'Precio justo', 'Desconocido', 'Desconocido']
+        categories = ['Great', 'Good', 'Fair', 'Tight', 'Expensive']
         price_ranges = [(self.low_margin_value, self.low_bound_value),
                         (self.low_bound_value, self.mid_low_bound_value),
                         (self.mid_low_bound_value, self.mid_high_bound_value),
                         (self.mid_high_bound_value, self.high_bound_value),
                         (self.high_bound_value, self.high_margin_value)]
         colors = ['#368A65', '#40B36A', '#BCD980', '#FAFFA1', '#F4CD96']  # Colors for the stacked bars
-        self.predict_price = 16818  # Example current price
 
-        # Create a horizontal stacked bar chart
-        fig, ax = plt.subplots(figsize=(20, 1), dpi=300)
+        # Create a vertical stacked bar chart
+        fig, ax = plt.subplots(figsize=(6, 3))  # Adjust size for vertical layout
 
         # Start stacking the bars
-        left_position = 0
-        for i, (category, price_range) in enumerate(zip(categories, price_ranges)):
-            # Calculate the width of the current category
-            width = price_range[1] - price_range[0]
-            ax.barh([0], width, left=left_position, color=colors[i], edgecolor='white', height=0.4, label=category)
-            left_position += width
+        bottom_position = 0
+        for i, price_range in enumerate( price_ranges):
+            # Calculate the height of the current category
+            height = price_range[1] - price_range[0]
+            ax.bar([0], height, bottom=bottom_position, color=colors[i], edgecolor='white')
+            bottom_position += height
 
-        # Add the price ranges as text on top of the bars
-        left_position = 0
+        # Add the price ranges as text on the bars
+        bottom_position = 0
         for i, price_range in enumerate(price_ranges):
-            mid_position = left_position + (price_range[1] - price_range[0]) / 2
-            ax.text(mid_position, 0, f"€ {price_range[0]:,} - € {price_range[1]:,}", ha='center', va='center', fontsize=12, color='black')
-            left_position += price_range[1] - price_range[0]
-
-        # # Mark the current price with a red vertical line and label
-        # ax.axvline(self.price_prediction, color='red', linestyle='--', lw=2)
-        # ax.text(self.price_prediction, 0.1, f"€ {self.price_prediction:,}", color='red', fontsize=12, ha='center')
-
-        # Hide y-axis and other unnecessary details
-        ax.get_yaxis().set_visible(False)
-        ax.get_xaxis().set_visible(False)
+            mid_position = bottom_position + (price_range[1] - price_range[0]) / 2
+            ax.text(0, mid_position, f"{categories[i]}: {price_range[0]:,}€ - {price_range[1]:,}€", 
+                    ha='center', va='center', fontsize=12, color='black')
+            bottom_position += price_range[1] - price_range[0]
+            ax.axis('off')
         plt.box(False)
 
         # Display the plot in Streamlit
-        # st.title("Horizontal Stacked Price Evaluation")
-        st.pyplot(fig)
+        st.pyplot(fig, use_container_width=True)
 
     def predict_price(self):        
         if self.selected_model:
             with st.expander("Price Prediction", expanded=True):
                 
-                col_1, col_2, col_3, col_4, col_5 = st.columns([0.23, 0.23, 0.23, 0.23, 0.08])
+                col_1, col_2 = st.columns([0.7, 0.3], gap='large')
+                # col_1, col_2, col_3, col_4, col_5 = st.columns([0.23, 0.23, 0.23, 0.23, 0.08])
                 with col_1:
                     user_km = st.number_input('Km:', value=round(self.selected_car['km'].median().astype(int),-4), step=5000)
-                with col_2:
+                # with col_2:
                     user_age_car = st.number_input('Car Age:', value=self.selected_car['age_years'].median().astype(int))
-                with col_3:
+                # with col_3:
                     idx_fuel = self.fuel_options.tolist().index(self.selected_car['fuel'].mode().values[0])
                     user_fuel = st.selectbox("Fuel:", options= self.fuel_options, index=idx_fuel)
-                with col_4:
+                # with col_4:
                     try:
                         idx_cv = self.cv_options.tolist().index(self.selected_car['cv'].mode().values[0])
                         user_cv = st.selectbox("Horsepower (CV):", options=self.cv_options, index=idx_cv)
                     except:
                         user_cv = None
-                with col_5:
+                # with col_5:
                     st.text('')
                     user_automatic = st.checkbox('Is Automatic', value=self.selected_car['is_automatic'].mode().values[0])
+                
 
                 
-                user_input = {
-                    'km': user_km,  # e.g., 50000
-                    'age_years': user_age_car,  # e.g., 3
-                    'is_automatic': user_automatic,  # 1 if automatic, 0 if manual
-                    'fuel': user_fuel,  # e.g., 'Diesel'
-                    'cv': user_cv  # e.g., '150'
-                }
+                with col_2:
+                    user_input = {
+                        'km': user_km,  # e.g., 50000
+                        'age_years': user_age_car,  # e.g., 3
+                        'is_automatic': user_automatic,  # 1 if automatic, 0 if manual
+                        'fuel': user_fuel,  # e.g., 'Diesel'
+                        'cv': user_cv  # e.g., '150'
+                    }
 
-                # Load the model and feature names
-                try:
-                    model_info = joblib.load(f'05_model/saved_models/{self.selected_brand}_{self.selected_model}.pkl')
-                except Exception as e:
-                    st.error(f"Error type: {e}")
-                model = model_info['model']
-                feature_names = model_info['feature_names']
+                    # Load the model and feature names
+                    try:
+                        model_info = joblib.load(f'05_model/saved_models/{self.selected_brand}_{self.selected_model}.pkl')
+                    except Exception as e:
+                        st.error(f"Error type: {e}")
+                    model = model_info['model']
+                    feature_names = model_info['feature_names']
 
-                # Prepare user input for prediction (reindex with feature_names)
-                user_df = pd.DataFrame([user_input])
-                user_df = pd.get_dummies(user_df, columns=['fuel', 'cv'])
-                user_df = user_df.reindex(columns=feature_names, fill_value=0)
+                    # Prepare user input for prediction (reindex with feature_names)
+                    user_df = pd.DataFrame([user_input])
+                    user_df = pd.get_dummies(user_df, columns=['fuel', 'cv'])
+                    user_df = user_df.reindex(columns=feature_names, fill_value=0)
 
-                # Make prediction
-                self.price_prediction = model.predict(user_df)[0]
-                _, mid, _ = st.columns([0.35, 0.15, 0.40])
-                with mid:
+                    # Make prediction
+                    self.price_prediction = model.predict(user_df)[0]
+                    # _, mid, _ = st.columns([0.35, 0.15, 0.40])
+                    # with mid:
+
                     st.success(f"**Predicted price: {int(self.price_prediction):,}€**")
-                self.selected_car_metrics = (self.performance_df[(self.performance_df['brand'] == self.selected_brand)
-                                             &
-                                             (self.performance_df['model'] == self.selected_model)])
-                # st.write(self.selected_car_metrics)
-                wide_bound = (self.selected_car_metrics['iqr_10_90']/2).values[0]
-                mid_bound = (self.selected_car_metrics['iqr_25_75']/2).values[0]
 
-                self.low_margin_value = round((self.price_prediction - max(wide_bound, 3000)).astype(int),-2)
-                self.low_bound_value = round((self.price_prediction - max(wide_bound, 1500)).astype(int),-2)
-                self.mid_low_bound_value = round((self.price_prediction - max(mid_bound, 500)).astype(int),-2)
-                self.mid_high_bound_value = round((self.price_prediction + max(mid_bound, 500)).astype(int),-2)
-                self.high_bound_value = round((self.price_prediction + max(wide_bound, 1500)).astype(int),-2)
-                self.high_margin_value = round((self.price_prediction + max(wide_bound, 3000)).astype(int),-2)
-                
-                self.plot_price_range()
+                   
+                    self.selected_car_metrics = (self.performance_df[(self.performance_df['brand'] == self.selected_brand)
+                                                &
+                                                (self.performance_df['model'] == self.selected_model)])
+                    # st.write(self.selected_car_metrics)
+                    wide_bound = (self.selected_car_metrics['iqr_10_90']/2).values[0]
+                    mid_bound = (self.selected_car_metrics['iqr_25_75']/2).values[0]
+
+                    mid_bound_capped = max(min(600,mid_bound), 200) 
+                    wide_bound_capped = max(min(mid_bound_capped, wide_bound), mid_bound_capped + 600)
+                    margin_bound_capped = max(wide_bound, wide_bound_capped + 500)
+
+                    self.mid_low_bound_value = round((self.price_prediction - mid_bound_capped).astype(int),-2)
+                    self.mid_high_bound_value = round((self.price_prediction + mid_bound_capped).astype(int),-2)
+
+                    self.low_margin_value = round((self.price_prediction - margin_bound_capped).astype(int),-2)
+                    self.low_bound_value = round((self.price_prediction - wide_bound_capped).astype(int),-2)
+                    self.mid_low_bound_value = round((self.price_prediction - mid_bound_capped).astype(int),-2)
+                    self.mid_high_bound_value = round((self.price_prediction + mid_bound_capped).astype(int),-2)
+                    self.high_bound_value = round((self.price_prediction + wide_bound_capped).astype(int),-2)
+                    self.high_margin_value = round((self.price_prediction + margin_bound_capped).astype(int),-2)
+     
+                    self.plot_price_range()
                 
                 
 
@@ -353,6 +359,7 @@ class CarPricePredictionApp:
                     edited_df = st.dataframe(filter_dataframe(self.selected_car[['price', 'predicted_price', 'price_diff', 'km', 'year', 'age_years', 'is_automatic',
                                                         'cv','fuel', 'title']]),
                                             hide_index=True)
+
                     
 
 # MAIN APP:
@@ -365,9 +372,7 @@ if __name__ == "__main__":
         pictures_data_path='app/app_files/car_pictures_table_all.csv'
     )
     app.run_app()
-
     
-
 
 
 #############################################################################################################
