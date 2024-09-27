@@ -173,7 +173,7 @@ class CarPricePredictionApp:
         colors = ['#368A65', '#40B36A', '#BCD980', '#FAFFA1', '#F4CD96']  # Colors for the stacked bars
 
         # Create a vertical stacked bar chart
-        fig, ax = plt.subplots(figsize=(6, 3))  # Adjust size for vertical layout
+        fig, ax = plt.subplots(figsize=(4, 4))  # Adjust size for vertical layout
 
         # Start stacking the bars
         bottom_position = 0
@@ -188,7 +188,7 @@ class CarPricePredictionApp:
         for i, price_range in enumerate(price_ranges):
             mid_position = bottom_position + (price_range[1] - price_range[0]) / 2
             ax.text(0, mid_position, f"{categories[i]}: {price_range[0]:,}€ - {price_range[1]:,}€", 
-                    ha='center', va='center', fontsize=12, color='black')
+                    ha='center', va='center', fontsize=10, color='black')
             bottom_position += price_range[1] - price_range[0]
             ax.axis('off')
         plt.box(False)
@@ -221,7 +221,7 @@ class CarPricePredictionApp:
                 
 
                 
-                with col_2:
+                
                     user_input = {
                         'km': user_km,  # e.g., 50000
                         'age_years': user_age_car,  # e.g., 3
@@ -248,15 +248,21 @@ class CarPricePredictionApp:
                     # _, mid, _ = st.columns([0.35, 0.15, 0.40])
                     # with mid:
 
-                    st.success(f"**Predicted price: {int(self.price_prediction):,}€**")
+                    sub_col1, sub_col2 = st.columns(2)
+                    with sub_col1:
+                        st.success(f"**Predicted price: {int(self.price_prediction):,}€**")
 
+                    with sub_col2:
                    
-                    self.selected_car_metrics = (self.performance_df[(self.performance_df['brand'] == self.selected_brand)
-                                                &
-                                                (self.performance_df['model'] == self.selected_model)])
-                    # st.write(self.selected_car_metrics)
-                    wide_bound = (self.selected_car_metrics['iqr_10_90']/2).values[0]
-                    mid_bound = (self.selected_car_metrics['iqr_25_75']/2).values[0]
+                        self.selected_car_metrics = (self.performance_df[(self.performance_df['brand'] == self.selected_brand)
+                                                    &
+                                                    (self.performance_df['model'] == self.selected_model)])
+                        # st.write(self.selected_car_metrics)
+                        wide_bound = (self.selected_car_metrics['iqr_10_90']/2).values[0]
+                        mid_bound = (self.selected_car_metrics['iqr_25_75']/2).values[0]
+
+                        price_prediction_rounded = int(self.price_prediction)
+                        st.info(f"**80% of offers are predicted to be between {int(round(self.price_prediction - wide_bound*2,-2)):,}€ and {int(round(self.price_prediction + wide_bound*2,-2)):,}€**")
 
                     mid_bound_capped = max(min(600,mid_bound), 200) 
                     wide_bound_capped = max(min(mid_bound_capped, wide_bound), mid_bound_capped + 600)
@@ -271,7 +277,8 @@ class CarPricePredictionApp:
                     self.mid_high_bound_value = round((self.price_prediction + mid_bound_capped).astype(int),-2)
                     self.high_bound_value = round((self.price_prediction + wide_bound_capped).astype(int),-2)
                     self.high_margin_value = round((self.price_prediction + margin_bound_capped).astype(int),-2)
-     
+                
+                with col_2:
                     self.plot_price_range()
                 
                 
