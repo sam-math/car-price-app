@@ -262,11 +262,12 @@ class CarPricePredictionApp:
                         mid_bound = (self.selected_car_metrics['iqr_25_75']/2).values[0]
 
                         price_prediction_rounded = int(self.price_prediction)
+                        # st.write(model_info['training_samples'])
                         st.info(f"**80% of offers are predicted to be between {int(round(self.price_prediction - wide_bound*2,-2)):,}€ and {int(round(self.price_prediction + wide_bound*2,-2)):,}€**")
 
                     mid_bound_capped = max(min(600,mid_bound), 200) 
-                    wide_bound_capped = max(min(mid_bound_capped, wide_bound), mid_bound_capped + 600)
-                    margin_bound_capped = max(wide_bound, wide_bound_capped + 500)
+                    wide_bound_capped = max(min(mid_bound_capped, wide_bound), mid_bound_capped + 1000)
+                    margin_bound_capped = max(wide_bound, wide_bound_capped + 1000)
 
                     self.mid_low_bound_value = round((self.price_prediction - mid_bound_capped).astype(int),-2)
                     self.mid_high_bound_value = round((self.price_prediction + mid_bound_capped).astype(int),-2)
