@@ -1,4 +1,4 @@
-# Tensorcar: your car adviser
+# Tensorcar: your car advisor
 
 ## Goal
 You want to buy a car. Which model? What price? No worries, Tensorcar will help you get to the right model and right price in no time!
@@ -9,6 +9,8 @@ Many of us will need to buy a car at some point. This probably will be the 2nd m
 Most people are not car-maniacs, so learning the market (product and price) can take considerable time, we can get confused (analysis paralysis), and companies can bias our decision-making.
 
 Tensorcar can help you in taking the best purchasing decision for you. You'll able to see and analyse more information in an unbiased manner, understand what's the right price point, and see how your investment/purchase depreciates over time.
+
+## Take a look
 ![](https://github.com/sam-math/tensorcar/blob/main/app/app_demo_1.gif)
 
 ## Project Scope
@@ -31,16 +33,20 @@ This is a full-cycle data science project:
 Mostly the project is done in Python
 
 1. **Scraping:** it's done using a combination of requests, playwright, and a thorough analysis of hidden API's. The parameters used and some files aren't available in this GitHub repo to be respectful with the websites from which we scrape.
+
 2. **Data Wrangling:** it's done with Polars, as it's faster than Pandas for the size of the data we are managing (Polars Lazyframes), and its Expressive API allow faster iteration and complex data munging.
+   
 3. **EDA and Preprocessing:** it's done with Numpy, Polars, Pandas and Seaborn. Nothing very sophisticated, just knowing how to apply your maths and stats properly (data distribution, long tails, IQRs, CDFs, etc.)
    - Outliers-detection is done at a second stage with regression to ensure outliers "guardrails" account for different price of a car model considering its mileage, age, etc.
-5. **Modelling:**
+     
+4. **Modelling:**
    - A specific model is trainned and saved for each specific car model available (around 1,000 car models).
    - The algorithm/predictor selected for each car depends on the number of car-ads samples available (e.g. Volkswagen Golf has over 5,000 car ads available, Ferrari's just a few dozen or hundred).
    - The algorithms with the hyperparameters chosen are the ones that we found out perform best without going into crazy training times.
    - The overall performance of our predictions is about 93-94% accuracy with no overfitting (absolute price difference between listed price and predicted price for all car ads samples).
      - However, as the objective is not to predict the price of an ad but the "fair" price of a car, we have intentionally decided to tuned our hyperparameters to model for this. Therefore, the overall price variation is 15% (so accuracy of 85%). The key idea is that we want to spot price arbitrage (good and bad ad deals) of future car ads for our users.
-6. **User App (Streamlit):**
+       
+5. **User App (Streamlit):**
    - The app provides a car model selector, and allows users adjust key parameters such us mileage, fuel type, gearbox type, etc.
    - Based on this, an interactive scatterplot of price vs mileage and price vs age is displayed, and a polynomic regressor is dynamically trained and display for line of best fit. This helps understand how depreciation works (for example, most premium cars depreciate faster).
    - As well, a price predictor provides a price point estimation for the "average" car of that car model as default. The user can then adjust the parameters to get a price estimation and price range for a car he/she is thinking to buy sell.
