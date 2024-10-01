@@ -6,9 +6,11 @@
 04_EDA/*
 05_model/*
 **/archive_files
+!*saved_models/
 !*.ipynb
 !*.py
 **/*config.py
+draft.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
