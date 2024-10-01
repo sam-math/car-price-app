@@ -353,7 +353,7 @@ class CarPricePredictionApp:
 
     def run_app(self):
             """Main entry point to run the Streamlit app."""
-            st.title('Car Price Prediction App')
+            st.title('Tensorcar: Your Car Price Predictor')
 
             self.get_user_selections()
 
