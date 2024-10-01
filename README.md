@@ -9,6 +9,7 @@ Many of us will need to buy a car at some point. This probably will be the 2nd m
 Most people are not car-maniacs, so learning the market (product and price) can take considerable time, we can get confused (analysis paralysis), and companies can bias our decision-making.
 
 Tensorcar can help you in taking the best purchasing decision for you. You'll able to see and analyse more information in an unbiased manner, understand what's the right price point, and see how your investment/purchase depreciates over time.
+![](https://github.com/sam-math/tensorcar/blob/main/app/app_demo_1.gif)
 
 ## Project Scope
 
