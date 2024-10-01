@@ -44,7 +44,7 @@ Mostly the project is done in Python
    - Based on this, an interactive scatterplot of price vs mileage and price vs age is displayed, and a polynomic regressor is dynamically trained and display for line of best fit. This helps understand how depreciation works (for example, most premium cars depreciate faster).
    - As well, a price predictor provides a price point estimation for the "average" car of that car model as default. The user can then adjust the parameters to get a price estimation and price range for a car he/she is thinking to buy sell.
    - We have considered user experience for both mobile and desktop users when designing the app (taking into account Streamlit technical capabilities and limitations).
-   - In general, early feedback from friends and family has been positive in terms of predictions and usability. We frequently check that predictions correspond with real car ads, and discrepancies spot possible good deals or expensive ones.
+   - In general, early feedback from friends and family has been very positive in terms of predictions and usability. We frequently check that predictions correspond with real car ads, and discrepancies spot possible good deals or expensive ones.
 
 ## Feedback and Contact:
 If you have any feedback, ideas, etc. more than happy to connect through GitHub or LinkedIn!
