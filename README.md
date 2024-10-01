@@ -31,7 +31,7 @@ Mostly the project is done in Python
 
 1. **Scraping:** it's done using a combination of requests, playwright, and a thorough analysis of hidden API's. The parameters used and some files aren't available in this GitHub repo to be respectful with the websites from which we scrape.
 2. **Data Wrangling:** it's done with Polars, as it's faster than Pandas for the size of the data we are managing (Polars Lazyframes), and its Expressive API allow faster iteration and complex data munging.
-3. **EDA and Preprocessing:** it's done with Numpy, Polars, Pandas and Seaborn. Nothing very sofisticated, just knowing how to apply your maths and stats properly (data distribution, long tails, IQRs, CDFs, etc.)
+3. **EDA and Preprocessing:** it's done with Numpy, Polars, Pandas and Seaborn. Nothing very sophisticated, just knowing how to apply your maths and stats properly (data distribution, long tails, IQRs, CDFs, etc.)
    - Outliers-detection is done at a second stage with regression to ensure outliers "guardrails" account for different price of a car model considering its mileage, age, etc.
 5. **Modelling:**
    - A specific model is trainned and saved for each specific car model available (around 1,000 car models).
