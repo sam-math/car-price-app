@@ -350,7 +350,7 @@ class CarPricePredictionApp:
 
             else:
                 st.warning("No data available for this brand-model combination.")
- 
+
     def run_app(self):
             """Main entry point to run the Streamlit app."""
             st.title('Tensorcar: Your Car Price Predictor')
