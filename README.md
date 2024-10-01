@@ -1,6 +1,5 @@
 # Tensorcar: your car advisor
 
-## Goal
 You want to buy a car. Which model? What price? No worries, Tensorcar will help you get to the right model and right price in no time!
 
 ## Motivation
@@ -12,6 +11,8 @@ Tensorcar can help you in taking the best purchasing decision for you. You'll ab
 
 ## Take a look
 ![](https://github.com/sam-math/tensorcar/blob/main/app/app_demo_1.gif)
+
+- Try it yourself: [https://tensorcar.streamlit.app/](https://tensorcar.streamlit.app/)
 
 ## Project Scope
 
