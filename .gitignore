@@ -10,6 +10,7 @@
 !*.ipynb
 !*.py
 **/*config.py
+draft.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
