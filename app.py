@@ -353,27 +353,27 @@ class CarPricePredictionApp:
 
     def run_app(self):
             """Main entry point to run the Streamlit app."""
-            st.markdown(
-            """
-            <style>
-            .custom-title {
-                font-size: 48px; /* Font size */
-                font-weight: bold; /* Bold font */
-                text-align: center; /* Center the text */
-                background: linear-gradient(90deg, #05384d, #066db3, #22c897); /* Gradient colors */
-                -webkit-background-clip: text; /* Clip the background to the text */
-                -webkit-text-fill-color: transparent; /* Fill the text with transparent color */
-                margin-bottom: 20px; /* Space below the title */
-                padding: 20px; /* Add padding for better spacing */
-                border-radius: 10px; /* Rounded corners */
-                font-family: 'Cabin', sans-serif;
-            }
-            </style>
-            <h1 class="custom-title">Tensorcar: Your Car Price Predictor</h1>
-            """, 
-            unsafe_allow_html=True
-        )
-            
+        #     st.markdown(
+        #     """
+        #     <style>
+        #     .custom-title {
+        #         font-size: 48px; /* Font size */
+        #         font-weight: bold; /* Bold font */
+        #         text-align: center; /* Center the text */
+        #         background: linear-gradient(90deg, #05384d, #066db3, #22c897); /* Gradient colors */
+        #         -webkit-background-clip: text; /* Clip the background to the text */
+        #         -webkit-text-fill-color: transparent; /* Fill the text with transparent color */
+        #         margin-bottom: 20px; /* Space below the title */
+        #         padding: 20px; /* Add padding for better spacing */
+        #         border-radius: 10px; /* Rounded corners */
+        #         font-family: 'Cabin', sans-serif;
+        #     }
+        #     </style>
+        #     <h1 class="custom-title">Tensorcar: Your Car Price Predictor</h1>
+        #     """, 
+        #     unsafe_allow_html=True
+        # )
+            st.title('Tensorcar: Your Car Predictor App')
 
             self.get_user_selections()
 
@@ -394,22 +394,22 @@ class CarPricePredictionApp:
 #####################################################################################################
 if __name__ == "__main__":
     # Initialize the app with paths to your datasets
-    st.markdown(
-    """
-    <style>
-    .main {
-        background: linear-gradient(120deg, rgba(241,247,247,1) 48%, rgba(179,197,223,1) 100%);
-        padding: 20px;
-        border-radius: 10px;
-        color: black;
-    }
-    .stApp {
-        background-color: #090979;
-    }
-    </style>
-    """, 
-    unsafe_allow_html=True
-    )
+    # st.markdown(
+    # """
+    # <style>
+    # .main {
+    #     background: linear-gradient(120deg, rgba(241,247,247,1) 48%, rgba(179,197,223,1) 100%);
+    #     padding: 20px;
+    #     border-radius: 10px;
+    #     color: black;
+    # }
+    # .stApp {
+    #     background-color: #090979;
+    # }
+    # </style>
+    # """, 
+    # unsafe_allow_html=True
+    # )
 
     app = CarPricePredictionApp(
         performance_data_path='app/app_files/performance_metrics.csv',
